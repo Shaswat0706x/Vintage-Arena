@@ -1,0 +1,1932 @@
+<!DOCTYPE html>
+<html lang="en" data-font-size="large">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VINTAGE ARENA - The Modern Gaming Academy</title>
+  <meta name="description" content="An in-depth, welcoming gaming academy for seniors and beginners. Learn what gaming is, how it works, health benefits, and careers with zero confusion.">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%200%20100%20100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Rajdhani:wght@600;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================
+       1. CINEMATIC TITLE SCREEN
+       ========================================================== -->
+  <section id="title-screen" aria-label="Game Title Screen">
+    <canvas id="embers-canvas"></canvas>
+
+    <!-- Background Major Big Games Logos Watermark Collage (with visible low transparency over criss-cross) -->
+    <div class="title-watermark-wall" aria-hidden="true">
+      <div class="watermark-badge-item" title="Pac-Man">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <circle cx="50" cy="50" r="44" fill="#0f172a" stroke="#eab308" stroke-width="2"/>
+          <path d="M 50 50 L 85 28 A 38 38 0 1 0 85 72 Z" fill="#facc15"/>
+          <path d="M 22 58 C 22 46, 38 46, 38 58 L 38 68 L 34 64 L 30 68 L 26 64 L 22 68 Z" fill="#ef4444"/>
+          <circle cx="27" cy="54" r="2" fill="#ffffff"/><circle cx="33" cy="54" r="2" fill="#ffffff"/>
+          <circle cx="68" cy="50" r="3.5" fill="#ffffff"/>
+          <circle cx="82" cy="50" r="3.5" fill="#ffffff"/>
+          <text x="50" y="88" font-family="'Impact', sans-serif" font-size="9" font-weight="900" fill="#facc15" text-anchor="middle" letter-spacing="1">PAC-MAN</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Super Mario">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#991b1b" stroke="#f87171" stroke-width="2"/>
+          <path d="M 20 48 Q 50 28 80 48 Q 86 54 68 56 Q 50 54 32 56 Q 14 54 20 48 Z" fill="#ef4444" stroke="#ffffff" stroke-width="2"/>
+          <circle cx="50" cy="40" r="14" fill="#ffffff"/>
+          <text x="50" y="46" font-family="'Impact', sans-serif" font-size="16" font-weight="900" fill="#ef4444" text-anchor="middle">M</text>
+          <polygon points="76,20 79,28 87,28 81,33 83,41 76,36 69,41 71,33 65,28 73,28" fill="#facc15"/>
+          <text x="50" y="84" font-family="'Impact', sans-serif" font-size="9.5" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">SUPER MARIO</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="The Legend of Zelda">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#042f2e" stroke="#2dd4bf" stroke-width="2"/>
+          <polygon points="50,18 64,38 36,38" fill="#fbbf24"/>
+          <polygon points="36,38 50,58 22,58" fill="#fbbf24"/>
+          <polygon points="64,38 78,58 50,58" fill="#fbbf24"/>
+          <path d="M 24 48 Q 50 36 76 48 Q 66 64 50 70 Q 34 64 24 48 Z" fill="none" stroke="#2dd4bf" stroke-width="2"/>
+          <line x1="50" y1="26" x2="50" y2="76" stroke="#e0f2fe" stroke-width="3"/>
+          <text x="50" y="90" font-family="'Cinzel', Georgia, serif" font-size="8" font-weight="900" fill="#fbbf24" text-anchor="middle" letter-spacing="1">ZELDA</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Sonic The Hedgehog">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#1e3a8a" stroke="#60a5fa" stroke-width="2"/>
+          <ellipse cx="50" cy="42" rx="28" ry="18" fill="none" stroke="#fbbf24" stroke-width="4"/>
+          <path d="M 38 46 Q 32 30 46 28 Q 42 22 54 22 Q 62 34 52 46 Q 66 36 70 48 Q 56 52 48 58 Q 38 58 38 46 Z" fill="#38bdf8"/>
+          <circle cx="58" cy="40" r="3" fill="#ffffff"/><circle cx="59" cy="40" r="1.5" fill="#0f172a"/>
+          <text x="50" y="84" font-family="'Impact', sans-serif" font-size="10.5" font-weight="900" fill="#fbbf24" text-anchor="middle" letter-spacing="1">SONIC</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Tetris">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#09090b" stroke="#a855f7" stroke-width="2"/>
+          <rect x="28" y="24" width="12" height="12" rx="2" fill="#ef4444" stroke="#ffffff" stroke-width="1"/>
+          <rect x="40" y="24" width="12" height="12" rx="2" fill="#f97316" stroke="#ffffff" stroke-width="1"/>
+          <rect x="52" y="24" width="12" height="12" rx="2" fill="#eab308" stroke="#ffffff" stroke-width="1"/>
+          <rect x="40" y="36" width="12" height="12" rx="2" fill="#3b82f6" stroke="#ffffff" stroke-width="1"/>
+          <rect x="28" y="48" width="12" height="12" rx="2" fill="#a855f7" stroke="#ffffff" stroke-width="1"/>
+          <rect x="40" y="48" width="12" height="12" rx="2" fill="#22c55e" stroke="#ffffff" stroke-width="1"/>
+          <rect x="52" y="48" width="12" height="12" rx="2" fill="#06b6d4" stroke="#ffffff" stroke-width="1"/>
+          <text x="50" y="80" font-family="'Impact', sans-serif" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="2">TETRIS</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Space Invaders">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#0f172a" stroke="#22c55e" stroke-width="2"/>
+          <path d="M 32 24 H 38 V 30 H 32 Z M 62 24 H 68 V 30 H 62 Z M 40 30 H 60 V 36 H 40 Z M 26 36 H 74 V 48 H 26 Z M 26 48 H 32 V 54 H 26 Z M 68 48 H 74 V 54 H 68 Z M 32 54 H 44 V 60 H 32 Z M 56 54 H 68 V 60 H 56 Z M 20 42 H 26 V 54 H 20 Z M 74 42 H 80 V 54 H 74 Z" fill="#22c55e"/>
+          <rect x="36" y="40" width="6" height="6" fill="#0f172a"/>
+          <rect x="58" y="40" width="6" height="6" fill="#0f172a"/>
+          <text x="50" y="84" font-family="'Impact', sans-serif" font-size="7.5" font-weight="900" fill="#86efac" text-anchor="middle" letter-spacing="1">SPACE INVADERS</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Pokémon">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#1e293b" stroke="#facc15" stroke-width="2"/>
+          <circle cx="50" cy="42" r="24" fill="#ef4444" stroke="#0f172a" stroke-width="3"/>
+          <path d="M 26 42 A 24 24 0 0 0 74 42 Z" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+          <line x1="26" y1="42" x2="74" y2="42" stroke="#0f172a" stroke-width="4"/>
+          <circle cx="50" cy="42" r="8" fill="#ffffff" stroke="#0f172a" stroke-width="3"/>
+          <circle cx="50" cy="42" r="4" fill="#cbd5e1"/>
+          <text x="50" y="84" font-family="'Impact', sans-serif" font-size="10.5" font-weight="900" fill="#facc15" text-anchor="middle" letter-spacing="1">POKÉMON</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Donkey Kong">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#451a03" stroke="#f59e0b" stroke-width="2"/>
+          <ellipse cx="50" cy="44" rx="26" ry="24" fill="#78350f" stroke="#f59e0b" stroke-width="2"/>
+          <line x1="24" y1="34" x2="76" y2="34" stroke="#d97706" stroke-width="2"/>
+          <line x1="24" y1="54" x2="76" y2="54" stroke="#d97706" stroke-width="2"/>
+          <text x="50" y="52" font-family="'Impact', sans-serif" font-size="22" font-weight="900" fill="#ef4444" stroke="#fef08a" stroke-width="0.8" text-anchor="middle">DK</text>
+          <text x="50" y="86" font-family="'Impact', sans-serif" font-size="8" font-weight="900" fill="#fde047" text-anchor="middle" letter-spacing="1">DONKEY KONG</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Street Fighter">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#18181b" stroke="#f97316" stroke-width="2"/>
+          <text x="50" y="46" font-family="'Impact', sans-serif" font-size="26" font-weight="900" fill="#f97316" text-anchor="middle" font-style="italic">SF</text>
+          <text x="50" y="46" font-family="'Impact', sans-serif" font-size="26" font-weight="900" fill="#facc15" text-anchor="middle" font-style="italic" transform="translate(-2,-2)">SF</text>
+          <text x="50" y="68" font-family="'Impact', sans-serif" font-size="18" font-weight="900" fill="#ef4444" text-anchor="middle">II</text>
+          <text x="50" y="86" font-family="sans-serif" font-size="7.5" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">STREET FIGHTER</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Mortal Kombat">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#09090b" stroke="#facc15" stroke-width="2"/>
+          <circle cx="50" cy="44" r="26" fill="#facc15" stroke="#ca8a04" stroke-width="2"/>
+          <circle cx="50" cy="44" r="23" fill="#09090b"/>
+          <path d="M 40 30 C 56 26, 68 34, 62 46 C 58 52, 46 50, 42 56 C 38 62, 50 64, 58 60 C 50 68, 34 64, 34 52 C 34 40, 48 40, 46 34 Z" fill="#facc15"/>
+          <circle cx="54" cy="33" r="1.5" fill="#09090b"/>
+          <text x="50" y="86" font-family="'Impact', sans-serif" font-size="7.5" font-weight="900" fill="#ef4444" text-anchor="middle" letter-spacing="1">MORTAL KOMBAT</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="DOOM">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#1c1917" stroke="#ef4444" stroke-width="2"/>
+          <text x="50" y="52" font-family="'Impact', sans-serif" font-size="24" font-weight="900" fill="#ef4444" text-anchor="middle" letter-spacing="2">DOOM</text>
+          <path d="M 50 18 L 54 26 L 46 26 Z M 48 26 L 48 68 L 52 68 L 52 26 Z M 42 38 L 58 38 L 58 42 L 42 42 Z" fill="#facc15"/>
+          <text x="50" y="86" font-family="sans-serif" font-size="7" font-weight="900" fill="#f87171" text-anchor="middle" letter-spacing="1.5">SLAYER</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Minecraft">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#14532d" stroke="#86efac" stroke-width="2"/>
+          <polygon points="50,18 78,32 50,46 22,32" fill="#22c55e" stroke="#15803d" stroke-width="2"/>
+          <polygon points="22,32 50,46 50,72 22,58" fill="#78350f" stroke="#451a03" stroke-width="2"/>
+          <polygon points="78,32 50,46 50,72 78,58" fill="#92400e" stroke="#451a03" stroke-width="2"/>
+          <rect x="46" y="24" width="8" height="6" fill="#15803d"/>
+          <text x="50" y="88" font-family="'Impact', sans-serif" font-size="9.5" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">MINECRAFT</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Grand Theft Auto V">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#0f172a" stroke="#f59e0b" stroke-width="2"/>
+          <text x="50" y="46" font-family="'Impact', sans-serif" font-size="28" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">GTA</text>
+          <text x="50" y="68" font-family="'Georgia', serif" font-size="20" font-weight="900" fill="#22c55e" text-anchor="middle">V</text>
+          <text x="50" y="86" font-family="sans-serif" font-size="6.5" font-weight="900" fill="#cbd5e1" text-anchor="middle" letter-spacing="1">GRAND THEFT AUTO</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Skyrim">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#1e293b" stroke="#cbd5e1" stroke-width="2"/>
+          <path d="M 50 16 C 48 24, 44 26, 40 32 C 44 34, 46 38, 46 44 L 32 38 L 30 52 L 44 56 C 42 64, 44 70, 50 78 C 56 70, 58 64, 56 56 L 70 52 L 68 38 L 54 44 C 54 38, 56 34, 60 32 C 56 26, 52 24, 50 16 Z" fill="#f8fafc" stroke="#64748b" stroke-width="1.5"/>
+          <text x="50" y="90" font-family="'Cinzel', Georgia, serif" font-size="9" font-weight="900" fill="#e2e8f0" text-anchor="middle" letter-spacing="1.5">SKYRIM</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Elden Ring">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#0f172a" stroke="#eab308" stroke-width="2"/>
+          <circle cx="50" cy="40" r="22" fill="none" stroke="#facc15" stroke-width="2.5" stroke-dasharray="3,2"/>
+          <circle cx="38" cy="45" r="18" fill="none" stroke="#facc15" stroke-width="2"/>
+          <circle cx="62" cy="45" r="18" fill="none" stroke="#facc15" stroke-width="2"/>
+          <circle cx="50" cy="56" r="20" fill="none" stroke="#facc15" stroke-width="2"/>
+          <line x1="50" y1="14" x2="50" y2="82" stroke="#facc15" stroke-width="2.5"/>
+          <path d="M 28 68 Q 50 82 72 68" fill="none" stroke="#facc15" stroke-width="2.5"/>
+          <text x="50" y="92" font-family="'Cinzel', Georgia, serif" font-size="8" font-weight="900" fill="#fef08a" text-anchor="middle" letter-spacing="1">ELDEN RING</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Cyberpunk 2077">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#fcee0a" stroke="#00f0ff" stroke-width="2"/>
+          <polygon points="12,18 88,18 80,78 12,78" fill="#000000"/>
+          <text x="50" y="46" font-family="'Impact', sans-serif" font-size="14" font-weight="900" fill="#00f0ff" text-anchor="middle" letter-spacing="1">CYBERPUNK</text>
+          <text x="50" y="68" font-family="'Impact', sans-serif" font-size="18" font-weight="900" fill="#ff003c" text-anchor="middle" letter-spacing="2">2077</text>
+          <text x="50" y="90" font-family="sans-serif" font-size="7" font-weight="900" fill="#000000" text-anchor="middle" letter-spacing="1">NIGHT CITY</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="The Witcher 3">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#18181b" stroke="#dc2626" stroke-width="2"/>
+          <polygon points="50,18 36,36 28,26 24,48 38,64 50,82 62,64 76,48 72,26 64,36" fill="#3f3f46" stroke="#e4e4e7" stroke-width="2"/>
+          <polygon points="40,44 46,46 42,49" fill="#ef4444"/>
+          <polygon points="60,44 54,46 58,49" fill="#ef4444"/>
+          <text x="50" y="92" font-family="sans-serif" font-size="7.5" font-weight="900" fill="#f87171" text-anchor="middle" letter-spacing="1.5">WITCHER 3</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="God of War">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+          <path d="M 26 68 L 36 68 Q 38 56 44 50 Q 30 44 30 34 Q 30 20 50 20 Q 70 20 70 34 Q 70 44 56 50 Q 62 56 64 68 L 74 68" fill="none" stroke="#e2e8f0" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M 32 28 Q 54 42 68 58" fill="none" stroke="#ef4444" stroke-width="3.5" stroke-linecap="round"/>
+          <text x="50" y="88" font-family="sans-serif" font-size="8" font-weight="900" fill="#93c5fd" text-anchor="middle" letter-spacing="1">GOD OF WAR</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Red Dead Redemption 2">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#7f1d1d" stroke="#fca5a5" stroke-width="2"/>
+          <circle cx="50" cy="44" r="24" fill="#fef08a" opacity="0.9"/>
+          <path d="M 28 48 Q 50 40 72 48 Q 64 36 50 34 Q 36 36 28 48 Z" fill="#18181b"/>
+          <text x="50" y="70" font-family="'Impact', sans-serif" font-size="24" font-weight="900" fill="#ffffff" text-anchor="middle">II</text>
+          <text x="50" y="88" font-family="'Impact', sans-serif" font-size="8" fill="#fecaca" text-anchor="middle" letter-spacing="1">RED DEAD</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="The Last of Us">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#052e16" stroke="#22c55e" stroke-width="2"/>
+          <circle cx="50" cy="40" r="16" fill="none" stroke="#86efac" stroke-width="2"/>
+          <line x1="50" y1="18" x2="50" y2="62" stroke="#86efac" stroke-width="2"/>
+          <line x1="30" y1="40" x2="70" y2="40" stroke="#86efac" stroke-width="2"/>
+          <text x="50" y="78" font-family="'Impact', sans-serif" font-size="9" font-weight="900" fill="#ffffff" text-anchor="middle">THE LAST OF US</text>
+          <text x="50" y="90" font-family="sans-serif" font-size="6.5" font-weight="800" fill="#86efac" text-anchor="middle">PART I</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Portal 2">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#0f172a" stroke="#38bdf8" stroke-width="2"/>
+          <ellipse cx="36" cy="44" rx="12" ry="22" fill="none" stroke="#0284c7" stroke-width="3.5"/>
+          <ellipse cx="64" cy="44" rx="12" ry="22" fill="none" stroke="#f97316" stroke-width="3.5"/>
+          <circle cx="50" cy="32" r="3.5" fill="#ffffff"/>
+          <line x1="50" y1="36" x2="50" y2="50" stroke="#ffffff" stroke-width="2"/>
+          <text x="50" y="86" font-family="'Impact', sans-serif" font-size="10" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">PORTAL 2</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Animal Crossing">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#064e3b" stroke="#34d399" stroke-width="2"/>
+          <path d="M 50 18 C 30 26, 24 50, 40 68 C 58 84, 76 66, 74 44 C 72 26, 62 18, 50 18 Z" fill="#10b981" stroke="#a7f3d0" stroke-width="2"/>
+          <circle cx="58" cy="40" r="5" fill="#064e3b"/>
+          <text x="50" y="88" font-family="'Comic Sans MS', cursive, sans-serif" font-size="7" font-weight="900" fill="#ecfdf5" text-anchor="middle">ANIMAL CROSSING</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Call of Duty">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#18181b" stroke="#22c55e" stroke-width="2"/>
+          <polygon points="50,18 76,32 76,58 50,74 24,58 24,32" fill="#27272a" stroke="#22c55e" stroke-width="2"/>
+          <circle cx="50" cy="46" r="14" fill="none" stroke="#4ade80" stroke-width="2"/>
+          <line x1="50" y1="28" x2="50" y2="64" stroke="#4ade80" stroke-width="1.5"/>
+          <line x1="32" y1="46" x2="68" y2="46" stroke="#4ade80" stroke-width="1.5"/>
+          <text x="50" y="88" font-family="'Impact', sans-serif" font-size="8.5" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">CALL OF DUTY</text>
+        </svg>
+      </div>
+
+      <div class="watermark-badge-item" title="Fall Guys">
+        <svg viewBox="0 0 100 100" class="watermark-svg">
+          <rect width="100" height="100" rx="20" fill="#ec4899" stroke="#fbcfe8" stroke-width="2"/>
+          <ellipse cx="50" cy="44" rx="20" ry="16" fill="#ffffff" stroke="#f472b6" stroke-width="2"/>
+          <ellipse cx="43" cy="44" rx="3" ry="5" fill="#0f172a"/>
+          <ellipse cx="57" cy="44" rx="3" ry="5" fill="#0f172a"/>
+          <polygon points="38,24 44,16 50,22 56,16 62,24" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
+          <text x="50" y="84" font-family="'Impact', sans-serif" font-size="10" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="1">FALL GUYS</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="title-top-bar">
+      <div class="game-version-tag">
+        <span>⚔️ VINTAGE ARENA // VER_3.0</span>
+      </div>
+
+      <div class="lang-selector-box">
+        <label for="title-lang-select" class="util-label" data-i18n="language">🌐 Language:</label>
+        <select id="title-lang-select" class="lang-dropdown" onchange="window.app.setLanguage(this.value)">
+          <option value="en">🇺🇸 English</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="hi">🇮🇳 हिन्दी</option>
+          <option value="fr">🇫🇷 Français</option>
+          <option value="de">🇩🇪 Deutsch</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="title-center-hub">
+      <span class="title-crest-emblem">👑</span>
+      <h1 class="epic-game-title">VINTAGE ARENA</h1>
+      <div class="epic-game-subtitle" data-i18n="titleSub">The Complete Gaming Academy for Seniors</div>
+
+      <div class="title-menu-list">
+        <button class="title-menu-btn btn-start-hero" onclick="window.app.enterAcademy(1)">
+          ⚔️ <span data-i18n="btnStart">START LEARNING</span>
+        </button>
+        <button class="title-menu-btn" onclick="window.app.enterAcademy(2)">
+          ⚙️ <span data-i18n="btnHowItWorks">HOW GAMING WORKS</span>
+        </button>
+        <button class="title-menu-btn" onclick="window.app.enterAcademy(3)">
+          🧠 <span data-i18n="btnAdvantages">HEALTH BENEFITS</span>
+        </button>
+        <button class="title-menu-btn" onclick="window.app.enterAcademy(4)">
+          💼 <span data-i18n="btnCareers">CAREERS & INDUSTRY</span>
+        </button>
+        <button class="title-menu-btn" onclick="window.app.enterAcademy(5)">
+          🎮 <span data-i18n="btnVault">GAME VAULT & GENRES</span>
+        </button>
+        <button class="title-menu-btn" onclick="window.app.enterAcademy(6)">
+          🎓 <span data-i18n="btnGraduation">SLANG & DIPLOMA</span>
+        </button>
+        <button class="title-menu-btn" onclick="window.app.enterAcademy(7)" style="border-color: #38bdf8;">
+          🛒 <span data-i18n="btnBuyingGuide">HOW TO BUY GAMES (PARENTS GUIDE)</span>
+        </button>
+      </div>
+
+      <div class="title-press-prompt" data-i18n="pressPrompt">
+        — PRESS ANY KEY OR CLICK TO ENTER —
+      </div>
+    </div>
+
+    <div class="title-footer">
+      <span data-i18n="titleFooter1">PRESS [SPACEBAR] OR [CLICK] TO ENTER</span>
+      <span data-i18n="titleFooter2">ALL GENERATIONS & SKILL LEVELS WELCOME</span>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       2. MAIN DASHBOARD ACADEMY HUB (LEFT SIDEBAR + MAIN AREA)
+       ========================================================== -->
+  <div id="main-app-hub">
+    <div class="dashboard-layout-wrapper">
+      
+      <!-- ==========================================================
+           LEFT SIDEBAR DASHBOARD NAVIGATION
+           ========================================================== -->
+      <aside class="dashboard-sidebar" aria-label="Course Navigation Sidebar">
+        <div>
+          <!-- Brand / Logo Box -->
+          <a href="#step1" class="sidebar-brand-box" onclick="window.app.goToStep(1); return false;">
+            <img src="assets/images/mascot.jpg" alt="Pip-Bot mascot" class="sidebar-avatar">
+            <div>
+              <h2 class="sidebar-brand-title">VINTAGE<span>ARENA</span></h2>
+              <span class="sidebar-tagline" data-i18n="siteSubtitle">Senior Gaming Academy</span>
+            </div>
+          </a>
+
+          <!-- Navigation Modules Header -->
+          <div class="sidebar-nav-section-title">
+            <span data-i18n="academyModules">ACADEMY MODULES</span>
+            <span class="tag-count" data-i18n="tagCount">7 STEPS</span>
+          </div>
+
+          <!-- 7 Dashboard Sidebar Steps -->
+          <nav class="sidebar-nav-list" aria-label="Lesson Steps">
+            <button class="sidebar-step-btn active" id="nav-step-1" onclick="window.app.goToStep(1)">
+              <span class="step-icon-box">📘</span>
+              <div class="step-text-wrap">
+                <span class="step-badge-pill" data-i18n="step1Badge">Step 1</span>
+                <span class="step-title-text" data-i18n="navWhat">What is Gaming?</span>
+              </div>
+            </button>
+
+            <button class="sidebar-step-btn" id="nav-step-2" onclick="window.app.goToStep(2)">
+              <span class="step-icon-box">⚙️</span>
+              <div class="step-text-wrap">
+                <span class="step-badge-pill" data-i18n="step2Badge">Step 2</span>
+                <span class="step-title-text" data-i18n="navHow">How It Works</span>
+              </div>
+            </button>
+
+            <button class="sidebar-step-btn" id="nav-step-3" onclick="window.app.goToStep(3)">
+              <span class="step-icon-box">🧠</span>
+              <div class="step-text-wrap">
+                <span class="step-badge-pill" data-i18n="step3Badge">Step 3</span>
+                <span class="step-title-text" data-i18n="navBenefits">Health Benefits</span>
+              </div>
+            </button>
+
+            <button class="sidebar-step-btn" id="nav-step-4" onclick="window.app.goToStep(4)">
+              <span class="step-icon-box">💼</span>
+              <div class="step-text-wrap">
+                <span class="step-badge-pill" data-i18n="step4Badge">Step 4</span>
+                <span class="step-title-text" data-i18n="navCareers">Careers & Industry</span>
+              </div>
+            </button>
+
+            <button class="sidebar-step-btn" id="nav-step-5" onclick="window.app.goToStep(5)">
+              <span class="step-icon-box">🎮</span>
+              <div class="step-text-wrap">
+                <span class="step-badge-pill" data-i18n="step5Badge">Step 5</span>
+                <span class="step-title-text" data-i18n="navVault">Game Vault & Genres</span>
+              </div>
+            </button>
+
+            <button class="sidebar-step-btn" id="nav-step-6" onclick="window.app.goToStep(6)">
+              <span class="step-icon-box">🎓</span>
+              <div class="step-text-wrap">
+                <span class="step-badge-pill" data-i18n="step6Badge">Step 6</span>
+                <span class="step-title-text" data-i18n="navSlang">Slang & Diploma</span>
+              </div>
+            </button>
+
+            <button class="sidebar-step-btn" id="nav-step-7" onclick="window.app.goToStep(7)">
+              <span class="step-icon-box">🛒</span>
+              <div class="step-text-wrap">
+                <span class="step-badge-pill" data-i18n="step7Badge">Step 7</span>
+                <span class="step-title-text" data-i18n="navBuying">Parents & Buying Guide</span>
+              </div>
+            </button>
+          </nav>
+
+          <!-- Sidebar Cadet HUD Card -->
+          <div class="sidebar-cadet-hud">
+            <div class="cadet-hud-header">
+              <span data-i18n="cadetProfile">👤 Cadet Profile</span>
+              <span style="color: #22c55e;" data-i18n="cadetReady">● READY</span>
+            </div>
+            <div class="cadet-hud-rank">
+              <span data-i18n="cadetRank">⭐ Level 1 Apprentice</span>
+            </div>
+            <div class="cadet-badges-row">
+              <span class="cadet-badge-pill" title="Enrolled Badge" data-i18n="badgeEnrolled">🏅 Enrolled</span>
+              <span class="cadet-badge-pill" title="Brain Agility" data-i18n="badgeScholar">🧠 Scholar</span>
+              <span class="cadet-badge-pill" title="Controller Ready" data-i18n="badgeCadet">🎮 Cadet</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar Bottom Actions -->
+        <div class="sidebar-bottom-actions">
+          <button class="sidebar-title-btn" onclick="window.app.returnToTitleScreen()" title="Return to Title Screen">
+            🏠 <span data-i18n="btnTitleScreen">Title Screen</span>
+          </button>
+          <div class="sidebar-info-card" style="font-size: 0.85rem; color: var(--text-light); text-align: center; padding-top: 6px;">
+            <span style="display: block; font-weight: 700; color: var(--color-primary-dark);" data-i18n="sidebarElderTag">👴 Elder-Friendly Learning</span>
+            <span data-i18n="sidebarNoAds">No ads • 100% Free</span>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ==========================================================
+           RIGHT MAIN CONTENT AREA
+           ========================================================== -->
+      <div class="dashboard-main-area">
+
+        <!-- Top Utility Bar (Reading Controls & Language) -->
+        <aside class="top-utility-bar" aria-label="Reading Controls">
+          <div class="utility-inner">
+            <div class="util-group">
+              <span class="util-label" data-i18n="textSize">🔤 Text Size:</span>
+              <button class="font-btn" data-size="normal" onclick="window.app.setFontSize('normal')" data-i18n="normal">Normal</button>
+              <button class="font-btn active" data-size="large" onclick="window.app.setFontSize('large')" data-i18n="large">Large</button>
+              <button class="font-btn" data-size="xl" onclick="window.app.setFontSize('xl')" data-i18n="extraLarge">Extra Large</button>
+            </div>
+
+            <div class="util-group">
+              <button id="sound-btn" class="sound-btn active" onclick="window.app.toggleSounds()" data-i18n="soundOn">
+                🔔 Sound: ON
+              </button>
+
+              <div class="lang-selector-box">
+                <label for="hub-lang-select" class="util-label" data-i18n="language">🌐 Language:</label>
+                <select id="hub-lang-select" class="lang-dropdown" onchange="window.app.setLanguage(this.value)">
+                  <option value="en">🇺🇸 English</option>
+                  <option value="es">🇪🇸 Español</option>
+                  <option value="hi">🇮🇳 हिन्दी</option>
+                  <option value="fr">🇫🇷 Français</option>
+                  <option value="de">🇩🇪 Deutsch</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Global Voice Reader Bar -->
+        <div id="global-tts-bar" class="global-tts-bar" role="region">
+          <div class="tts-bar-inner">
+            <div>
+              <strong id="tts-status-text" data-i18n="ttsReading">🔊 Reading aloud to you...</strong>
+            </div>
+            <div>
+              <button id="tts-pause-btn" class="tts-btn" onclick="window.narrator.isPlaying ? window.narrator.pause() : window.narrator.resume()" data-i18n="ttsPause">
+                ⏸️ Pause
+              </button>
+              <button class="tts-btn" onclick="window.narrator.stop()" style="margin-left: 8px;" data-i18n="ttsStop">
+                ⏹️ Stop
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Content Wrapper -->
+        <main class="main-wrapper">
+
+          <!-- Global Academy Player HUD Bar -->
+          <div class="academy-player-hud" role="region" aria-label="Player Academy Status">
+            <div class="hud-player-profile">
+              <div class="hud-rank-icon">🎮</div>
+              <div class="hud-player-meta">
+                <span class="hud-callsign" data-i18n="hudCallsign">CADET CALLSIGN: PILOT-01</span>
+                <span class="hud-rank-name" id="hud-active-module-title" data-i18n="module1Name">📘 Module 1: Foundational Literacy</span>
+              </div>
+            </div>
+
+            <div class="hud-quest-tracker">
+              <div class="hud-quest-label-row">
+                <span class="hud-quest-tag" id="hud-quest-status" data-i18n="hudQuest1">⚔️ Active Quest: 1 of 6</span>
+                <span class="hud-xp-points" id="hud-xp-display">XP: 200 / 1000 (20%)</span>
+              </div>
+              <div class="hud-xp-track">
+                <div class="hud-xp-fill" id="hud-xp-bar-fill" style="width: 20%;"></div>
+              </div>
+            </div>
+          </div>
+
+      <!-- ====================================================
+           MODULE 1: WHAT IS GAMING (FROM SCRATCH)
+           ==================================================== -->
+      <section id="step-1" class="step-page-section active-section">
+        <div class="lesson-header-card">
+          <div>
+            <span class="lesson-badge" data-i18n="m1Badge">Module 1 of 6 // Foundational Literacy</span>
+            <h2 data-i18n="m1Title">📘 What is Video Gaming? (From Ground Zero)</h2>
+            <p data-i18n="m1Sub">If you have never played a video game in your life, this comprehensive lesson explains the medium from the ground up in clear, respectful, plain English.</p>
+          </div>
+          <button class="read-aloud-big-btn" onclick="window.app.readCurrentSection('step-1')" data-i18n="readAloudBtn">
+            🔊 Read this module aloud
+          </button>
+        </div>
+
+        <!-- The Core Definition -->
+        <div class="clean-white-card">
+          <div class="card-telemetry-header">
+            <span class="telemetry-node">SYS_ONLINE // CHAPTER_01</span>
+            <span class="telemetry-code">TOPIC: INTERACTIVE_PARADIGM</span>
+            <span class="telemetry-badge">XP REWARD: +100 XP</span>
+          </div>
+
+          <h3 class="card-title-lg">
+            <span data-i18n="m1Ch1Title">💡 The Fundamental Definition of Interactive Media</span>
+            <span class="tag-code">// CHAPTER_01</span>
+          </h3>
+          <p class="deep-explainer-text" data-i18n="m1Ch1Lead">
+            To understand video games, consider how human storytelling has evolved across history:
+          </p>
+          <div class="simple-grid-2" style="margin-bottom: 24px;">
+            <div class="feature-box">
+              <span class="feature-icon">📖</span>
+              <h4 data-i18n="m1Card1H">Books & Literature (Passive Imagination)</h4>
+              <p data-i18n="m1Card1P">You read the author’s printed words and imagine the characters and scenery in your own mind.</p>
+            </div>
+            <div class="feature-box">
+              <span class="feature-icon">🎬</span>
+              <h4 data-i18n="m1Card2H">Movies & Television (Passive Observation)</h4>
+              <p data-i18n="m1Card2P">You sit back in a chair and watch actors perform a pre-recorded story. You cannot change what happens on screen.</p>
+            </div>
+            <div class="feature-box" style="border-top-color: #22c55e;">
+              <span class="feature-icon">🎮</span>
+              <h4 data-i18n="m1Card3H">Video Games (Active Participation & Agency)</h4>
+              <p data-i18n="m1Card3P"><strong>You are inside the world.</strong> When you press a button, the character steps forward, plants a seed, steers an airplane, or investigates a mystery. The story reacts to <em>your</em> personal decisions.</p>
+            </div>
+          </div>
+
+          <div class="card-telemetry-header" style="margin-top: 28px;">
+            <span class="telemetry-node">HISTORY_LOG // 1972_PRESENT</span>
+            <span class="telemetry-code">ARCHIVE: HARDWARE_EVOLUTION</span>
+            <span class="telemetry-badge">LEVEL: ESSENTIAL</span>
+          </div>
+
+          <h3 class="card-title-lg">
+            <span data-i18n="m1HistTitle">🏛️ The Evolution of Gaming (1972 to Today)</span>
+            <span class="tag-code">// HISTORY</span>
+          </h3>
+          <p class="deep-explainer-text" data-i18n="m1HistP1">
+            Gaming began in the early 1970s with simple black-and-white electronic arcade games like <em>Pong</em> (bouncing a square pixel back and forth like table tennis) and <em>Pac-Man</em> (navigating a maze to eat dots). 
+          </p>
+          <p class="deep-explainer-text" data-i18n="m1HistP2">
+            Over the past 50 years, as microchips became exponentially faster, video games transformed into <strong>living, photorealistic digital worlds</strong>. Today, a modern video game features full orchestral symphonies recorded by London Philharmonic orchestras, Hollywood voice actors performing in motion-capture suits, and simulated ecosystems with realistic weather, birdsong, and physics.
+          </p>
+
+          <div class="card-telemetry-header" style="margin-top: 28px;">
+            <span class="telemetry-node">SYSTEM_CORE // 4_PILLARS</span>
+            <span class="telemetry-code">ANATOMY: GAME_RULES</span>
+            <span class="telemetry-badge">STATUS: VERIFIED</span>
+          </div>
+
+          <h3 class="card-title-lg">
+            <span data-i18n="m1PillarsTitle">🧩 The 4 Core Elements of Every Game</span>
+            <span class="tag-code">// SYSTEM_ANATOMY</span>
+          </h3>
+          <div class="simple-grid-2">
+            <div class="feature-box">
+              <span class="feature-icon">🎯</span>
+              <h4 data-i18n="m1Pillar1H">1. Clear Goals & Objectives</h4>
+              <p data-i18n="m1Pillar1P">Every game gives you a meaningful purpose: tending a fruitful garden, solving a crossword puzzle, restoring an ancient village, or landing an airplane safely.</p>
+            </div>
+            <div class="feature-box">
+              <span class="feature-icon">📜</span>
+              <h4 data-i18n="m1Pillar2H">2. Gentle Rules & Boundaries</h4>
+              <p data-i18n="m1Pillar2P">Just like chess or bridge, rules establish what is possible. For example, in a golf game, the wind and slope of the green influence where your ball rolls.</p>
+            </div>
+            <div class="feature-box">
+              <span class="feature-icon">🔄</span>
+              <h4 data-i18n="m1Pillar3H">3. Instant Responsive Feedback</h4>
+              <p data-i18n="m1Pillar3P">When you take an action, the screen immediately provides satisfying audio and visual rewards: pleasant chimes, sparkling stars, or blooming flowers.</p>
+            </div>
+            <div class="feature-box">
+              <span class="feature-icon">🕊️</span>
+              <h4 data-i18n="m1Pillar4H">4. Voluntary Freedom & Relaxation</h4>
+              <p data-i18n="m1Pillar4P">Unlike work or obligations, gaming is completely voluntary. You can play for 10 minutes or 2 hours, pause anytime, and explore at your own comfortable pace.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="lesson-nav-footer">
+          <div></div>
+          <button class="btn-nav-action btn-nav-next" onclick="window.app.goToStep(2)" data-i18n="btnNextM2">
+            Next: Module 2 - How Gaming Works ➔
+          </button>
+        </div>
+      </section>
+
+      <!-- ====================================================
+           MODULE 2: HOW GAMING WORKS (HARDWARE & ENGINES)
+           ==================================================== -->
+      <section id="step-2" class="step-page-section">
+        <div class="lesson-header-card">
+          <div>
+            <span class="lesson-badge" data-i18n="m2Badge">Module 2 of 6 // Technical Architecture</span>
+            <h2 data-i18n="m2Title">⚙️ How Video Games Actually Work (Under the Hood)</h2>
+            <p data-i18n="m2Sub">Ever wondered what happens behind the screen when you push a button? Here is the complete technical science of gaming explained in simple analogies.</p>
+          </div>
+          <button class="read-aloud-big-btn" onclick="window.app.readCurrentSection('step-2')" data-i18n="readAloudBtn">
+            🔊 Read this module aloud
+          </button>
+        </div>
+
+        <!-- The 4-Stage Loop -->
+        <div class="clean-white-card">
+          <div class="card-telemetry-header">
+            <span class="telemetry-node">HARDWARE_LOOP // 60_FPS</span>
+            <span class="telemetry-code">LATENCY: 16.6ms / CYCLE</span>
+            <span class="telemetry-badge">XP REWARD: +150 XP</span>
+          </div>
+
+          <h3 class="card-title-lg">
+            <span data-i18n="m2LoopTitle">🔄 The Continuous 60-Frames-Per-Second Game Loop</span>
+            <span class="tag-code">// COMPUTATION</span>
+          </h3>
+          <p class="deep-explainer-text" data-i18n="m2LoopLead">
+            When a video game runs on a computer, console, or tablet, it repeats a lightning-fast 4-stage cycle approximately <strong>60 times every single second</strong>:
+          </p>
+
+          <div class="simple-grid-2">
+            <div class="feature-box">
+              <span class="feature-icon">🕹️</span>
+              <h4 data-i18n="m2Stage1H">Stage 1: Input Detection</h4>
+              <p data-i18n="m2Stage1P">The device checks the position of your controller buttons, keyboard keys, or touch screen. It detects if you gently tilted the thumbstick forward to walk.</p>
+            </div>
+            <div class="feature-box">
+              <span class="feature-icon">🧠</span>
+              <h4 data-i18n="m2Stage2H">Stage 2: Game Logic & Physics Engine</h4>
+              <p data-i18n="m2Stage2P">The processor calculates what happens next: gravity pulls a falling apple down, character footsteps move forward by 2 inches, and distance to the garden gate is updated.</p>
+            </div>
+            <div class="feature-box">
+              <span class="feature-icon">🎨</span>
+              <h4 data-i18n="m2Stage3H">Stage 3: Graphics Rendering</h4>
+              <p data-i18n="m2Stage3P">The graphics card calculates sunlight reflections, shadow angles, and tree leaf colors, drawing a photorealistic image on your screen in less than 16 milliseconds.</p>
+            </div>
+            <div class="feature-box">
+              <span class="feature-icon">🔊</span>
+              <h4 data-i18n="m2Stage4H">Stage 4: 3D Spatial Audio</h4>
+              <p data-i18n="m2Stage4P">The sound chip plays audio from the exact virtual direction: river water murmurs to your left ear, while a songbird chirps in your right headphone.</p>
+            </div>
+          </div>
+
+          <div class="card-telemetry-header" style="margin-top: 32px;">
+            <span class="telemetry-node">CORE_FRAMEWORK // ENGINES</span>
+            <span class="telemetry-code">PLATFORMS: UNREAL_5 // UNITY</span>
+            <span class="telemetry-badge">STATUS: INDUSTRIAL STANDARD</span>
+          </div>
+
+          <h3 class="card-title-lg">
+            <span data-i18n="m2EngineTitle">🌐 What is a "Game Engine"?</span>
+            <span class="tag-code">// SOFTWARE</span>
+          </h3>
+          <p class="deep-explainer-text" data-i18n="m2EngineP1">
+            Software developers do not build games from scratch line by line. Instead, they use powerful software platforms called <strong>Game Engines</strong> (such as <em>Unreal Engine</em> and <em>Unity</em>). 
+          </p>
+          <p class="deep-explainer-text" data-i18n="m2EngineP2">
+            Think of a Game Engine like a master movie studio: it provides virtual laws of physics (gravity, collision, wind), realistic light reflection, camera controls, and audio systems so creators can focus on crafting beautiful stories and engaging puzzles.
+          </p>
+        </div>
+
+        <!-- Interactive Gamepad Simulator -->
+        <div class="controller-showcase-box">
+          <div class="card-telemetry-header">
+            <span class="telemetry-node">DIAGNOSTIC_CONSOLE // RIG_ONLINE</span>
+            <span class="telemetry-code">TELEMETRY: BLUETOOTH_v5.3</span>
+            <span class="telemetry-badge">INTERACTIVE SIMULATION</span>
+          </div>
+
+          <h3 class="card-title-lg" style="margin-bottom: 20px;">
+            <span data-i18n="m2InspectorTitle">🎮 Interactive Gamepad Inspector</span>
+            <span class="tag-code">// HANDS_ON</span>
+          </h3>
+
+          <div class="controller-layout-row">
+            <div class="gamepad-visual-area">
+              <div class="gamepad-instruction-tip" data-i18n="m2InspectorTip">
+                👇 Click on any button to see its real-world function
+              </div>
+
+              <div class="gamepad-svg-wrap" id="simple-gamepad-svg"></div>
+
+              <div class="button-clicker-list">
+                <button class="btn-inspect-part active" onclick="window.app.inspectButton('lstick')" data-i18n="btnLeftStick">🕹️ Left Stick</button>
+                <button class="btn-inspect-part" onclick="window.app.inspectButton('rstick')" data-i18n="btnRightStick">👀 Right Stick</button>
+                <button class="btn-inspect-part" onclick="window.app.inspectButton('action_a')" data-i18n="btnGreenA">🟢 Green A</button>
+                <button class="btn-inspect-part" onclick="window.app.inspectButton('action_b')" data-i18n="btnRedB">🔴 Red B</button>
+                <button class="btn-inspect-part" onclick="window.app.inspectButton('triggers')" data-i18n="btnTriggers">🎯 Triggers</button>
+                <button class="btn-inspect-part" onclick="window.app.inspectButton('menu')" data-i18n="btnMenu">⏸️ Menu</button>
+              </div>
+            </div>
+
+            <div class="button-detail-panel" id="button-explanation-panel">
+              <h3 id="panel-btn-title">🕹️ Left Thumbstick</h3>
+              <span class="button-purpose-subtitle" id="panel-btn-purpose">Character Movement & Walking</span>
+              <p class="detail-main-text" id="panel-btn-text">
+                Gently push this small rubber stick in the direction you want to walk. Pushing softly moves you slowly; pushing fully lets you walk faster.
+              </p>
+              <div class="simple-analogy-callout">
+                <strong data-i18n="btnAnalogyLabel">💡 Everyday Analogy:</strong>
+                <p id="panel-btn-analogy" style="margin-top: 4px;">Just like walking your feet in any direction or steering your car.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lesson-nav-footer">
+          <button class="btn-nav-action btn-nav-prev" onclick="window.app.goToStep(1)" data-i18n="btnBackM1">
+            ⬅️ Back to Module 1
+          </button>
+          <button class="btn-nav-action btn-nav-next" onclick="window.app.goToStep(3)" data-i18n="btnNextM3">
+            Next: Module 3 - Benefits & Health ➔
+          </button>
+        </div>
+      </section>
+
+      <!-- ====================================================
+           MODULE 3: HEALTH & BRAIN ADVANTAGES
+           ==================================================== -->
+      <section id="step-3" class="step-page-section">
+        <div class="lesson-header-card">
+          <div>
+            <span class="lesson-badge" data-i18n="m3Badge">Module 3 of 6 // Science & Well-Being</span>
+            <h2 data-i18n="m3Title">🧠 Scientific & Daily Life Advantages of Gaming for 50+ Adults</h2>
+            <p data-i18n="m3Sub">Peer-reviewed clinical studies from Harvard, University of California, and AARP confirm that video games are powerful tools for healthy aging, memory preservation, and mental vitality.</p>
+          </div>
+          <button class="read-aloud-big-btn" onclick="window.app.readCurrentSection('step-3')" data-i18n="readAloudBtn">
+            🔊 Read this module aloud
+          </button>
+        </div>
+
+        <div class="clean-white-card">
+          <div class="card-telemetry-header">
+            <span class="telemetry-node">NEURO_LAB // CLINICAL_STUDIES</span>
+            <span class="telemetry-code">SOURCES: HARVARD // UC_IRVINE // AARP</span>
+            <span class="telemetry-badge">EVIDENCE: LEVEL_A PEER REVIEWED</span>
+          </div>
+
+          <h3 class="card-title-lg">
+            <span data-i18n="m3BenefitsTitle">🔬 4 Proven Neurological & Lifestyle Benefits</span>
+            <span class="tag-code">// CLINICAL_EVIDENCE</span>
+          </h3>
+
+          <div class="simple-grid-2">
+            <div class="feature-box">
+              <span class="feature-icon">🧠</span>
+              <h4 data-i18n="m3Ben1H">1. Neuroplasticity & Memory Retention</h4>
+              <p data-i18n="m3Ben1P">Navigating 3D environments stimulates the <strong>hippocampus</strong> — the brain center for long-term memory and spatial orientation. UC Irvine research demonstrated a <strong>30% improvement in memory recall</strong> among older adults who played 3D adventure games for 30 minutes daily.</p>
+              
+              <!-- RPG Stat Meter 1 -->
+              <div class="gamer-stat-meter">
+                <div class="stat-label-row">
+                  <span class="stat-name" data-i18n="m3Stat1Name">🧠 Memory & Recall Buff</span>
+                  <span class="stat-val" data-i18n="m3Stat1Val">+30% VITALITY (92/100)</span>
+                </div>
+                <div class="stat-track">
+                  <div class="stat-fill" style="width: 92%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-box">
+              <span class="feature-icon">👁️</span>
+              <h4 data-i18n="m3Ben2H">2. Fine Motor Skills & Hand-Eye Reflexes</h4>
+              <p data-i18n="m3Ben2P">Holding a controller or clicking a mouse gently exercises finger joint flexibility, grip stability, and neural-muscular coordination, helping counteract natural age-related stiffness without strenuous physical stress.</p>
+              
+              <!-- RPG Stat Meter 2 -->
+              <div class="gamer-stat-meter">
+                <div class="stat-label-row">
+                  <span class="stat-name" data-i18n="m3Stat2Name">🎯 Motor Dexterity Buff</span>
+                  <span class="stat-val" data-i18n="m3Stat2Val">+180ms SPEED (86/100)</span>
+                </div>
+                <div class="stat-track">
+                  <div class="stat-fill" style="width: 86%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-box">
+              <span class="feature-icon">🤝</span>
+              <h4 data-i18n="m3Ben3H">3. Intergenerational Bonding (Eliminating Isolation)</h4>
+              <p data-i18n="m3Ben3P">Over 70% of grandchildren report that playing collaborative multiplayer games (like <em>Animal Crossing</em> or <em>Minecraft</em>) with their grandparents significantly deepened their family relationship and opened up hours of joyful conversation.</p>
+              
+              <!-- RPG Stat Meter 3 -->
+              <div class="gamer-stat-meter">
+                <div class="stat-label-row">
+                  <span class="stat-name" data-i18n="m3Stat3Name">🤝 Co-Op Social Synergy</span>
+                  <span class="stat-val" data-i18n="m3Stat3Val">+400% BOND (100/100 MAX)</span>
+                </div>
+                <div class="stat-track">
+                  <div class="stat-fill" style="width: 100%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="feature-box">
+              <span class="feature-icon">🕊️</span>
+              <h4 data-i18n="m3Ben4H">4. Stress Reduction & Mental "Flow State"</h4>
+              <p data-i18n="m3Ben4P">Immersing your attention in tranquil puzzle or gardening games reduces cortisol (the primary stress hormone) and triggers endorphins, providing deep mental calm and mindful meditation.</p>
+              
+              <!-- RPG Stat Meter 4 -->
+              <div class="gamer-stat-meter">
+                <div class="stat-label-row">
+                  <span class="stat-name" data-i18n="m3Stat4Name">🛡️ Stress Relief Shield</span>
+                  <span class="stat-val" data-i18n="m3Stat4Val">-45% CORTISOL (94/100)</span>
+                </div>
+                <div class="stat-track">
+                  <div class="stat-fill" style="width: 94%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lesson-nav-footer">
+          <button class="btn-nav-action btn-nav-prev" onclick="window.app.goToStep(2)" data-i18n="btnBackM2">
+            ⬅️ Back to Module 2
+          </button>
+          <button class="btn-nav-action btn-nav-next" onclick="window.app.goToStep(4)" data-i18n="btnNextM4">
+            Next: Module 4 - Careers & Industry ➔
+          </button>
+        </div>
+      </section>
+
+      <!-- ====================================================
+           MODULE 4: CAREER & INDUSTRY OPPORTUNITIES
+           ==================================================== -->
+      <section id="step-4" class="step-page-section">
+        <div class="lesson-header-card">
+          <div>
+            <span class="lesson-badge" data-i18n="m4Badge">Module 4 of 6 // Industry & Careers</span>
+            <h2 data-i18n="m4Title">💼 Career & Professional Opportunities in Gaming</h2>
+            <p data-i18n="m4Sub">Generating over $185 Billion annually, the gaming industry is larger than global film box office and music industries combined. Discover the diverse career pathways that bring digital worlds to life!</p>
+          </div>
+          <button class="read-aloud-big-btn" onclick="window.app.readCurrentSection('step-4')" data-i18n="readAloudBtn">
+            🔊 Read this module aloud
+          </button>
+        </div>
+
+        <div class="clean-white-card">
+          <div class="card-telemetry-header">
+            <span class="telemetry-node">INDUSTRY_DATA // GLOBAL_ECONOMY</span>
+            <span class="telemetry-code">MARKET VALUATION: $185B+ USD / YEAR</span>
+            <span class="telemetry-badge">XP REWARD: +150 XP</span>
+          </div>
+
+          <h3 class="card-title-lg">
+            <span data-i18n="m4MarketTitle">📈 A Global Economic Powerhouse ($185B+ Industry)</span>
+            <span class="tag-code">// MARKET_OVERVIEW</span>
+          </h3>
+          <p class="deep-explainer-text" data-i18n="m4MarketLead">
+            Video games employ hundreds of thousands of creative professionals worldwide across computer science, classical music, literature, architectural design, and psychology.
+          </p>
+
+          <div class="card-telemetry-header" style="margin-top: 28px;">
+            <span class="telemetry-node">GUILD_ROSTER // 8_VOCATIONS</span>
+            <span class="telemetry-code">SECTOR: CREATIVE & SCIENTIFIC PATHWAYS</span>
+            <span class="telemetry-badge">STATUS: HIRING WORLDWIDE</span>
+          </div>
+
+          <h3 class="card-title-lg">
+            <span data-i18n="m4VocationsTitle">💼 8 High-Demand Career Pathways</span>
+            <span class="tag-code">// VOCATIONS</span>
+          </h3>
+
+          <div class="career-grid">
+            <div class="career-card">
+              <span class="career-class-badge" data-i18n="c1Class">⚡ CLASS: WORLD ARCHITECT</span>
+              <h4 data-i18n="c1H">🎨 1. Game Designers & Level Architects</h4>
+              <span class="career-salary-tag" data-i18n="c1Tag">Creative & Architecture</span>
+              <p data-i18n="c1P">Visionaries who design the rules, puzzle mechanics, pacing, and architectural layout of towns, dungeons, and landscapes.</p>
+              <div class="career-gear-slot">
+                <span data-i18n="c1Gear">🛠️ Primary Tools: Unreal Engine 5, Blueprinting, Floor Plans</span>
+              </div>
+            </div>
+
+            <div class="career-card">
+              <span class="career-class-badge" data-i18n="c2Class">🛡️ CLASS: ENGINE WIZARD</span>
+              <h4 data-i18n="c2H">💻 2. Software Engineers & Gameplay Coders</h4>
+              <span class="career-salary-tag" data-i18n="c2Tag">Technology & Science</span>
+              <p data-i18n="c2P">Programmers who write the algorithms for artificial intelligence, character movement physics, and high-speed internet servers.</p>
+              <div class="career-gear-slot">
+                <span data-i18n="c2Gear">🛠️ Primary Tools: C++, Python, GPU Shader Math</span>
+              </div>
+            </div>
+
+            <div class="career-card">
+              <span class="career-class-badge" data-i18n="c3Class">🎨 CLASS: 3D SCULPTOR</span>
+              <h4 data-i18n="c3H">🖌️ 3. 3D Artists, Animators & Illustrators</h4>
+              <span class="career-salary-tag" data-i18n="c3Tag">Visual Arts</span>
+              <p data-i18n="c3P">Sculptors and painters of the digital era who model 3D trees, cozy cottages, facial expressions, and clothing textures.</p>
+              <div class="career-gear-slot">
+                <span data-i18n="c3Gear">🛠️ Primary Tools: Blender 3D, Maya, Digital Brushes</span>
+              </div>
+            </div>
+
+            <div class="career-card">
+              <span class="career-class-badge" data-i18n="c4Class">📜 CLASS: LORE SCRIBE</span>
+              <h4 data-i18n="c4H">📖 4. Narrative Designers & Story Writers</h4>
+              <span class="career-salary-tag" data-i18n="c4Tag">Literature & Scriptwriting</span>
+              <p data-i18n="c4P">Authors who write emotional character dialogue, lore books, branching storylines, and historical world-building.</p>
+              <div class="career-gear-slot">
+                <span data-i18n="c4Gear">🛠️ Primary Tools: Twine, Scriptwriting, Dialogue Trees</span>
+              </div>
+            </div>
+
+            <div class="career-card">
+              <span class="career-class-badge" data-i18n="c5Class">🎼 CLASS: AUDIO BARD</span>
+              <h4 data-i18n="c5H">🎼 5. Composers & Audio Engineers</h4>
+              <span class="career-salary-tag" data-i18n="c5Tag">Music & Acoustics</span>
+              <p data-i18n="c5P">Musicians who compose sweeping orchestral soundtracks and foley artists who record footsteps on snow, rain on glass, and rustling autumn leaves.</p>
+              <div class="career-gear-slot">
+                <span data-i18n="c5Gear">🛠️ Primary Tools: Orchestral Scoring, Logic Pro, Foley Microphones</span>
+              </div>
+            </div>
+
+            <div class="career-card">
+              <span class="career-class-badge" data-i18n="c6Class">🎭 CLASS: AVATAR ACTOR</span>
+              <h4 data-i18n="c6H">🎭 6. Voice Actors & Motion-Capture Artists</h4>
+              <span class="career-salary-tag" data-i18n="c6Tag">Dramatic Performance</span>
+              <p data-i18n="c6P">Actors who wear sensor suits and perform dramatic lines in recording studios, giving lifelike emotion to digital characters.</p>
+              <div class="career-gear-slot">
+                <span data-i18n="c6Gear">🛠️ Primary Tools: Mo-Cap Sensor Suits, Studio Microphones</span>
+              </div>
+            </div>
+
+            <div class="career-card">
+              <span class="career-class-badge" data-i18n="c7Class">🔍 CLASS: BUG SLAYER</span>
+              <h4 data-i18n="c7H">🔍 7. QA Testers & Usability Researchers</h4>
+              <span class="career-salary-tag" data-i18n="c7Tag">Quality & Psychology</span>
+              <p data-i18n="c7P">Specialists who test games for accessibility, ensuring controls are comfortable for older adults and free of computer software bugs.</p>
+              <div class="career-gear-slot">
+                <span data-i18n="c7Gear">🛠️ Primary Tools: Test Suites, Eye Tracking, Ergonomics</span>
+              </div>
+            </div>
+
+            <div class="career-card">
+              <span class="career-class-badge" data-i18n="c8Class">🏆 CLASS: GUILD CHAMPION</span>
+              <h4 data-i18n="c8H">🏆 8. Esports Coaches & Senior Streamers</h4>
+              <span class="career-salary-tag" data-i18n="c8Tag">Broadcast & Entertainment</span>
+              <p data-i18n="c8P">Commentators, coaches, and inspiring senior gamers like 88-year-old <em>Shirley Curry</em> and Sweden's <em>Silver Snipers</em> team (average age 71).</p>
+              <div class="career-gear-slot">
+                <span data-i18n="c8Gear">🛠️ Primary Tools: Streaming Cameras, Headsets, Community Chats</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lesson-nav-footer">
+          <button class="btn-nav-action btn-nav-prev" onclick="window.app.goToStep(3)" data-i18n="btnBackM3">
+            ⬅️ Back to Module 3
+          </button>
+          <button class="btn-nav-action btn-nav-next" onclick="window.app.goToStep(5)" data-i18n="btnNextM5">
+            Next: Module 5 - Grand Game Vault ➔
+          </button>
+        </div>
+      </section>
+
+      <!-- ====================================================
+           MODULE 5: THE GRAND GAME VAULT (ALL GENRES EXPLORER)
+           ==================================================== -->
+      <section id="step-5" class="step-page-section">
+        <div class="lesson-header-card">
+          <div>
+            <span class="lesson-badge" data-i18n="m5Badge">Module 5 of 6 // Comprehensive Game Encyclopedia</span>
+            <h2 data-i18n="m5Title">🎮 The Grand Game Vault: Discovering Major Titles & Genres</h2>
+            <p data-i18n="m5Sub">Explore over 30 celebrated games across every major genre—from massive open-world AAA blockbusters to thrilling horror, interactive cinema, anime gachas, and cozy simulations. Click on any game card to inspect its full deep-dive guide!</p>
+          </div>
+          <button class="read-aloud-big-btn" onclick="window.app.readCurrentSection('step-5')" data-i18n="readAloudBtn">
+            🔊 Read this module aloud
+          </button>
+        </div>
+
+        <!-- Controls: Search & Genre Filter Bar -->
+        <div class="game-vault-controls">
+          <div class="card-telemetry-header">
+            <span class="telemetry-node">CODEX_VAULT // 30+ MAJOR TITLES INDEXED</span>
+            <span class="telemetry-code">EXPLORE: AAA // HORROR // STORY // GACHA // COZY // SHOOTERS // STRATEGY</span>
+            <span class="telemetry-badge">INTERACTIVE CODEX</span>
+          </div>
+
+          <!-- Live Search Row -->
+          <div class="game-search-row">
+            <div class="game-search-input-wrap">
+              <span class="game-search-icon">🔍</span>
+              <input type="text" id="game-search-input" class="game-search-input" placeholder="Search games by title, genre, or studio (e.g. 'Elden Ring', 'Horror', 'Zelda')..." data-i18n-placeholder="searchPlaceholder" oninput="window.app.handleGameSearch(this.value)">
+            </div>
+          </div>
+
+          <!-- Genre Filter Pills -->
+          <div class="game-genre-filter-bar">
+            <button class="game-filter-btn active" data-filter="all" onclick="window.app.filterGames('all', this)" data-i18n="filterAll">🌟 All Games (30+)</button>
+            <button class="game-filter-btn" data-filter="aaa" onclick="window.app.filterGames('aaa', this)" data-i18n="filterAAA">⚔️ Major AAA</button>
+            <button class="game-filter-btn" data-filter="horror" onclick="window.app.filterGames('horror', this)" data-i18n="filterHorror">👻 Horror & Survival</button>
+            <button class="game-filter-btn" data-filter="story" onclick="window.app.filterGames('story', this)" data-i18n="filterStory">📖 Story & Narrative</button>
+            <button class="game-filter-btn" data-filter="gacha" onclick="window.app.filterGames('gacha', this)" data-i18n="filterGacha">✨ Gacha & Anime RPG</button>
+            <button class="game-filter-btn" data-filter="shooter" onclick="window.app.filterGames('shooter', this)" data-i18n="filterShooter">🎯 Action & Shooters</button>
+            <button class="game-filter-btn" data-filter="cozy" onclick="window.app.filterGames('cozy', this)" data-i18n="filterCozy">🌿 Cozy & Simulation</button>
+            <button class="game-filter-btn" data-filter="strategy" onclick="window.app.filterGames('strategy', this)" data-i18n="filterStrategy">🧩 Strategy & Puzzle</button>
+            <button class="game-filter-btn" data-filter="esports" onclick="window.app.filterGames('esports', this)" data-i18n="filterEsports">⚽ Sports & Racing</button>
+          </div>
+        </div>
+
+        <!-- Dynamic Game Codex Grid Container -->
+        <div id="games-vault-grid" class="games-vault-grid" role="region" aria-label="Game Codex Vault Grid">
+          <!-- Rendered dynamically by window.app.renderGameCards() -->
+        </div>
+
+        <div class="lesson-nav-footer">
+          <button class="btn-nav-action btn-nav-prev" onclick="window.app.goToStep(4)" data-i18n="btnBackM4">
+            ⬅️ Back to Module 4
+          </button>
+          <button class="btn-nav-action btn-nav-next" onclick="window.app.goToStep(6)" data-i18n="btnNextM6">
+            Next: Module 6 - Slang & Certification ➔
+          </button>
+        </div>
+      </section>
+
+      <!-- ====================================================
+           MODULE 6: SLANG, COZY HIGHLIGHTS & CERTIFICATION
+           ==================================================== -->
+      <section id="step-6" class="step-page-section">
+        <div class="lesson-header-card">
+          <div>
+            <span class="lesson-badge" data-i18n="m6Badge">Module 6 of 6 // Practice & Graduation</span>
+            <h2 data-i18n="m6Title">🎓 Grandkid Slang, Cozy Games & Senior Certification</h2>
+            <p data-i18n="m6Sub">Explore beginner-friendly games, decode the words your grandkids use, and graduate with your official personalized credential!</p>
+          </div>
+          <button class="read-aloud-big-btn" onclick="window.app.readCurrentSection('step-6')" data-i18n="readAloudBtn">
+            🔊 Read this module aloud
+          </button>
+        </div>
+
+        <!-- Slang Decoder -->
+        <div class="slang-big-card">
+          <div class="card-telemetry-header">
+            <span class="telemetry-node">SYS_COMM // SLANG_DECRYPTOR</span>
+            <span class="telemetry-code">TRANSLATOR: GEN_Z ➔ GRANDPARENT</span>
+            <span class="telemetry-badge">XP REWARD: +200 XP</span>
+          </div>
+
+          <h3 class="card-title-lg">
+            <span data-i18n="slangTitle">💬 Grandkid Slang Decoder Terminal</span>
+            <span class="tag-code">// LINGUISTICS</span>
+          </h3>
+          <p style="margin-bottom: 12px;" data-i18n="slangLead">Click any phrase below to see its everyday, plain-English meaning:</p>
+
+          <div class="slang-buttons-row">
+            <button class="slang-choice-btn" onclick="window.app.showSlang('gg')" data-i18n="slangBtnGG">"GG" <span style="font-size: 0.75rem; opacity: 0.8;">[SPORTSMANSHIP]</span></button>
+            <button class="slang-choice-btn" onclick="window.app.showSlang('afk')" data-i18n="slangBtnAFK">"AFK" <span style="font-size: 0.75rem; opacity: 0.8;">[PAUSE]</span></button>
+            <button class="slang-choice-btn" onclick="window.app.showSlang('npc')" data-i18n="slangBtnNPC">"NPC" <span style="font-size: 0.75rem; opacity: 0.8;">[VILLAGER]</span></button>
+            <button class="slang-choice-btn" onclick="window.app.showSlang('coop')" data-i18n="slangBtnCoop">"Co-op" <span style="font-size: 0.75rem; opacity: 0.8;">[TEAMWORK]</span></button>
+            <button class="slang-choice-btn" onclick="window.app.showSlang('loot')" data-i18n="slangBtnLoot">"Loot" <span style="font-size: 0.75rem; opacity: 0.8;">[TREASURE]</span></button>
+            <button class="slang-choice-btn" onclick="window.app.showSlang('respawn')" data-i18n="slangBtnRespawn">"Respawn" <span style="font-size: 0.75rem; opacity: 0.8;">[CHECKPOINT]</span></button>
+            <button class="slang-choice-btn" onclick="window.app.showSlang('dlc')" data-i18n="slangBtnDLC">"DLC" <span style="font-size: 0.75rem; opacity: 0.8;">[EXPANSION]</span></button>
+            <button class="slang-choice-btn" onclick="window.app.showSlang('easteregg')" data-i18n="slangBtnEasterEgg">"Easter Egg" <span style="font-size: 0.75rem; opacity: 0.8;">[SECRET]</span></button>
+          </div>
+
+          <div class="slang-result-box" id="slang-display-box">
+            <h4 class="slang-result-title" id="slang-term-title">🌟 "GG" means: Good Game</h4>
+            <p class="slang-result-desc" id="slang-term-desc">
+              A polite, sportsmanlike handshake at the end of a match. Just like saying <em>"Great game, it was a pleasure playing with you!"</em>
+            </p>
+          </div>
+        </div>
+
+        <!-- 4 Recommended Cozy Games -->
+        <div class="clean-white-card" style="margin-top: 28px;">
+          <div class="card-telemetry-header">
+            <span class="telemetry-node">CURATED_VAULT // COZY_EXPEDITIONS</span>
+            <span class="telemetry-code">DIFFICULTY: NOVICE / RELAXING</span>
+            <span class="telemetry-badge">ACCESSIBILITY: 100% VERIFIED</span>
+          </div>
+
+          <h3 class="card-title-lg">
+            <span data-i18n="cozyTitle">🌿 4 Hand-Picked Relaxing Games for Beginners</span>
+            <span class="tag-code">// RECOMMENDATIONS</span>
+          </h3>
+
+          <div class="games-showcase-grid" style="margin-top: 20px;">
+            <div class="game-simple-card">
+              <span class="game-pill-type" data-i18n="cozyG1Pill">Island Life & Nature</span>
+              <h3>Animal Crossing: New Horizons</h3>
+              <p data-i18n="cozyG1P">Move to a serene island, plant orchards, catch gentle butterflies, and decorate your cottage. Real-world clock matches your time.</p>
+              <div class="game-comfort-highlight" data-i18n="cozyG1Why">
+                💖 <strong>Why you'll love it:</strong> Zero stress, no enemies, and grandchildren can visit your virtual island!
+              </div>
+            </div>
+
+            <div class="game-simple-card">
+              <span class="game-pill-type" data-i18n="cozyG2Pill">Country Farm & Community</span>
+              <h3>Stardew Valley</h3>
+              <p data-i18n="cozyG2P">Inherit a peaceful country farm. Plant vegetables, raise happy chickens, attend seasonal festivals, and revitalize the village.</p>
+              <div class="game-comfort-highlight" data-i18n="cozyG2Why">
+                💖 <strong>Why you'll love it:</strong> Nostalgic story, relaxing acoustic melodies, available on iPad or computer.
+              </div>
+            </div>
+
+            <div class="game-simple-card">
+              <span class="game-pill-type" data-i18n="cozyG3Pill">Soothing Landscape Puzzle</span>
+              <h3>Dorfromantik</h3>
+              <p data-i18n="cozyG3P">Place picturesque hexagonal tiles to build an endless countryside of forests, rivers, windmills, and gentle railway tracks.</p>
+              <div class="game-comfort-highlight" data-i18n="cozyG3Why">
+                💖 <strong>Why you'll love it:</strong> Like building a miniature train set with calming bird songs and zero time limit.
+              </div>
+            </div>
+
+            <div class="game-simple-card">
+              <span class="game-pill-type" data-i18n="cozyG4Pill">Scenic Travel & Aviation</span>
+              <h3>Microsoft Flight Simulator</h3>
+              <p data-i18n="cozyG4P">Take to the skies and fly over your hometown, Paris, the Grand Canyon, or the Swiss Alps with real 1:1 satellite mapping.</p>
+              <div class="game-comfort-highlight" data-i18n="cozyG4Why">
+                💖 <strong>Why you'll love it:</strong> Breathtaking sightseeing and revisiting favorite vacation spots from your living room.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Knowledge Check & Certificate -->
+        <div class="quiz-container-box" style="margin-top: 28px;">
+          <div class="card-telemetry-header">
+            <span class="telemetry-node">EVALUATION // FINAL_EXAM</span>
+            <span class="telemetry-code">MASTERY: LEVEL_01 COMPLIANCE</span>
+            <span class="telemetry-badge">REWARD: OFFICIAL CERTIFICATE</span>
+          </div>
+
+          <h3 class="card-title-lg">
+            <span data-i18n="quizTitle">🎓 Academy Graduation Check</span>
+            <span class="tag-code">// CERTIFICATION</span>
+          </h3>
+
+          <div class="quiz-simple-item">
+            <h4 data-i18n="q1Title">1. What does "Co-op" mean in video games?</h4>
+            <div class="quiz-option-row">
+              <label class="quiz-btn-label">
+                <input type="radio" name="sq1" value="0">
+                <span data-i18n="q1Opt0">Playing together on the same team towards a shared goal</span>
+              </label>
+              <label class="quiz-btn-label">
+                <input type="radio" name="sq1" value="1">
+                <span data-i18n="q1Opt1">A chicken coop in a farm</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="quiz-simple-item">
+            <h4 data-i18n="q2Title">2. What does your grandchild mean when they say "GG"?</h4>
+            <div class="quiz-option-row">
+              <label class="quiz-btn-label">
+                <input type="radio" name="sq2" value="0">
+                <span data-i18n="q2Opt0">Good Game (a polite friendly handshake)</span>
+              </label>
+              <label class="quiz-btn-label">
+                <input type="radio" name="sq2" value="1">
+                <span data-i18n="q2Opt1">Go Away</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="quiz-simple-item">
+            <h4 data-i18n="q3Title">3. What is an "NPC"?</h4>
+            <div class="quiz-option-row">
+              <label class="quiz-btn-label">
+                <input type="radio" name="sq3" value="0">
+                <span data-i18n="q3Opt0">A character controlled by the computer (like a friendly shopkeeper)</span>
+              </label>
+              <label class="quiz-btn-label">
+                <input type="radio" name="sq3" value="1">
+                <span data-i18n="q3Opt1">A broken computer part</span>
+              </label>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 24px;">
+            <button class="btn-nav-action btn-nav-next" onclick="window.app.completeQuiz()" style="margin: 0 auto;" data-i18n="submitQuizBtn">
+              ✅ Submit & Create My Certificate
+            </button>
+          </div>
+        </div>
+
+        <!-- Official Diploma Canvas -->
+        <div class="cert-box-clean" id="cert-wrapper-box" style="display: none;">
+          <h3 style="font-size: 1.7rem; color: #ffffff; margin-bottom: 8px;" data-i18n="certReadyTitle">
+            📜 Your Official Certificate is Ready!
+          </h3>
+          <p style="font-size: 1.15rem; margin-bottom: 16px;" data-i18n="certReadyDesc">Type your full name below to see it on your diploma:</p>
+
+          <input type="text" id="student-name-input" class="cert-input-clean" placeholder="Enter Your Name..." data-i18n-placeholder="certNamePlaceholder" value="Master Gamer" oninput="window.app.drawCertificate()">
+
+          <div>
+            <canvas id="cert-canvas"></canvas>
+          </div>
+
+          <div style="display: flex; justify-content: center; gap: 16px; margin-top: 18px;">
+            <button class="btn-nav-action btn-nav-next" onclick="window.app.downloadCert()" data-i18n="btnDownloadCert">
+              💾 Download Certificate (Image)
+            </button>
+          </div>
+        </div>
+
+        <div class="lesson-nav-footer">
+          <button class="btn-nav-action btn-nav-prev" onclick="window.app.goToStep(5)" data-i18n="btnBackM5">
+            ⬅️ Back to Module 5 (Game Vault)
+          </button>
+          <button class="btn-nav-action btn-nav-next" onclick="window.app.goToStep(7)" data-i18n="btnNextM7">
+            Next: Module 7 - Parent's Buying Guide ➔
+          </button>
+        </div>
+      </section>
+
+      <!-- ====================================================
+           MODULE 7: PARENT'S & SENIOR'S PURCHASING GUIDE
+           ==================================================== -->
+      <section id="step-7" class="step-page-section">
+        <!-- Lesson Header Card -->
+        <div class="lesson-header-card">
+          <div>
+            <span class="lesson-badge" data-i18n="m7Badge">Module 7 of 7 // Family Support & Purchasing</span>
+            <h2 data-i18n="m7Title">🛒 Parents & Seniors Guide: How to Buy Games Safely</h2>
+            <p data-i18n="m7Sub">A complete, stress-free tutorial for parents and grandparents on purchasing, gifting, and downloading games on Steam, Epic Games, Nintendo, PlayStation, and Xbox—with zero confusion.</p>
+          </div>
+          <button class="read-aloud-big-btn" onclick="window.app.readCurrentSection('step-7')" data-i18n="readAloudBtn">
+            🔊 Read this module aloud
+          </button>
+        </div>
+
+        <!-- 1. The Big Picture: How Digital Game Stores Work -->
+        <div class="clean-white-card">
+          <div class="card-telemetry-header">
+            <span class="telemetry-node">COMMERCE_SYSTEMS // DIGITAL_LIBRARIES</span>
+            <span class="telemetry-code">CLOUD ARCHITECTURE</span>
+            <span class="telemetry-badge">FOUNDATIONAL KNOWLEDGE</span>
+          </div>
+
+          <h3 class="card-title-lg">
+            <span data-i18n="m7IntroTitle">🌐 Modern Gaming Stores: Where Games Live Today</span>
+            <span class="tag-code">// DIGITAL COMMERCE</span>
+          </h3>
+          <p data-i18n="m7IntroLead">Gone are the days of fragile plastic discs getting lost or scratched under the sofa. Today, games work just like buying an eBook on Amazon or a digital song on your phone. When you purchase a game, it is securely registered to your child's account in a permanent cloud library.</p>
+
+          <div class="games-showcase-grid" style="margin-top: 20px;">
+            <div class="game-simple-card">
+              <span class="game-pill-type" style="background:#e0f2fe; color:#0369a1;">Cloud Backup</span>
+              <h3 data-i18n="m7AdvCard1H">Never Lost or Scratched</h3>
+              <p data-i18n="m7AdvCard1P">The game lives safely in the cloud. Even if the computer or console breaks, you never have to buy it twice.</p>
+              <div class="game-comfort-highlight">
+                🔒 <strong>Permanent Ownership:</strong> Tied to the account for life.
+              </div>
+            </div>
+
+            <div class="game-simple-card">
+              <span class="game-pill-type" style="background:#fef3c7; color:#b45309;">Long-Distance Gifting</span>
+              <h3 data-i18n="m7AdvCard2H">Instant Worldwide Gifting</h3>
+              <p data-i18n="m7AdvCard2P">Grandparents can buy a game from hundreds of miles away and send it instantly with a personalized birthday message.</p>
+              <div class="game-comfort-highlight">
+                🎁 <strong>Zero Postage:</strong> Arrives on their birthday morning automatically.
+              </div>
+            </div>
+
+            <div class="game-simple-card">
+              <span class="game-pill-type" style="background:#f0fdf4; color:#166534;">Zero Maintenance</span>
+              <h3 data-i18n="m7AdvCard3H">Automatic Updates & Fixes</h3>
+              <p data-i18n="m7AdvCard3P">The store app automatically keeps the game patched and bug-free with zero technical hassle for parents.</p>
+              <div class="game-comfort-highlight">
+                ⚡ <strong>Always Ready:</strong> Click Play and the latest version starts.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. The 5 Major Digital Storefronts -->
+        <div class="clean-white-card" style="margin-top: 28px;">
+          <div class="card-telemetry-header">
+            <span class="telemetry-node">STOREFRONT_DIRECTORY // VERIFIED_PLATFORMS</span>
+            <span class="telemetry-code">ECOSYSTEMS: PC // SWITCH // PLAYSTATION // XBOX</span>
+            <span class="telemetry-badge">OFFICIAL STORES</span>
+          </div>
+
+          <h3 class="card-title-lg">
+            <span data-i18n="m7PlatformsTitle">🏪 The 5 Major Digital Storefronts</span>
+            <span class="tag-code">// SELECT PLATFORM</span>
+          </h3>
+          <p data-i18n="m7PlatformsLead">Click each platform below to inspect what it is, how to access it, and its family safety features:</p>
+
+          <!-- Platform Selector Tabs -->
+          <div class="store-platforms-bar" role="tablist" aria-label="Digital Gaming Stores">
+            <button class="store-platform-btn active" data-platform="steam" onclick="window.app.selectBuyingPlatform('steam')">
+              <span>💨 Steam</span>
+              <span class="platform-btn-pill">PC / Mac</span>
+            </button>
+            <button class="store-platform-btn" data-platform="epic" onclick="window.app.selectBuyingPlatform('epic')">
+              <span>⚡ Epic Games</span>
+              <span class="platform-btn-pill">Fortnite & Free Games</span>
+            </button>
+            <button class="store-platform-btn" data-platform="playstation" onclick="window.app.selectBuyingPlatform('playstation')">
+              <span>🎮 PlayStation Store</span>
+              <span class="platform-btn-pill">PS4 / PS5</span>
+            </button>
+            <button class="store-platform-btn" data-platform="nintendo" onclick="window.app.selectBuyingPlatform('nintendo')">
+              <span>🍄 Nintendo eShop</span>
+              <span class="platform-btn-pill">Switch</span>
+            </button>
+            <button class="store-platform-btn" data-platform="xbox" onclick="window.app.selectBuyingPlatform('xbox')">
+              <span>🟢 Xbox & Microsoft</span>
+              <span class="platform-btn-pill">Xbox / Game Pass</span>
+            </button>
+          </div>
+
+          <!-- Dynamic Active Platform Showcase Card -->
+          <div id="platform-showcase-container" class="platform-showcase-card">
+            <div class="platform-card-header">
+              <div class="platform-title-group">
+                <div class="platform-big-icon" id="platform-showcase-icon">💨</div>
+                <div>
+                  <div style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                    <h4 class="platform-name" id="platform-showcase-name">Steam</h4>
+                    <span class="platform-btn-pill" id="platform-showcase-badge" style="background:#0284c7; color:#fff;">WORLD'S #1 PC STORE</span>
+                  </div>
+                  <div class="platform-maker" id="platform-showcase-maker">Valve Corporation • PC, Mac & Steam Deck</div>
+                </div>
+              </div>
+
+              <a href="https://store.steampowered.com" target="_blank" rel="noopener noreferrer" class="platform-link-btn" id="platform-showcase-link">
+                🔗 Open Steam Website ➔
+              </a>
+            </div>
+
+            <div class="platform-features-grid">
+              <div class="platform-feature-box">
+                <h4>🌟 What It's Best For</h4>
+                <p id="platform-feat-bestfor">The undisputed king of computer gaming. Has the largest selection, incredible seasonal sales (50% to 85% off during Summer and Winter sales!), and built-in Family Sharing.</p>
+              </div>
+
+              <div class="platform-feature-box">
+                <h4>🎁 How to Buy & Gift</h4>
+                <p id="platform-feat-howworks">Download the free Steam client from steampowered.com. Create a free account. Search for a game, and click 'Purchase as a Gift' to send it directly to your child's username with a greeting message.</p>
+              </div>
+
+              <div class="platform-feature-box">
+                <h4>🛡️ Consumer Refund Policy</h4>
+                <p id="platform-feat-refund"><strong>100% Money-Back Guarantee:</strong> If played under 2 hours and requested within 14 days of purchase, Steam refunds your money with zero questions asked.</p>
+              </div>
+
+              <div class="platform-feature-box" style="border-left: 4px solid #22c55e;">
+                <h4 style="color:#166534;">👨‍👩‍👧 Family Safety Tools</h4>
+                <p id="platform-feat-parenttip"><strong>Steam Family View:</strong> Set a 4-digit master PIN that blocks access to the store, community forums, and games rated for older audiences.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. The 5-Step Purchasing Roadmap -->
+        <div class="clean-white-card" style="margin-top: 28px;">
+          <div class="card-telemetry-header">
+            <span class="telemetry-node">PURCHASE_PIPELINE // STEP_BY_STEP</span>
+            <span class="telemetry-code">PROCEDURAL PROTOCOL</span>
+            <span class="telemetry-badge">EASY 5 STEPS</span>
+          </div>
+
+          <h3 class="card-title-lg">
+            <span data-i18n="m7RoadmapTitle">🗺️ 5-Step Visual Purchasing Walkthrough for Parents</span>
+            <span class="tag-code">// PROCEDURAL GUIDE</span>
+          </h3>
+          <p data-i18n="m7RoadmapLead">Follow this step-by-step masterclass to choose, purchase, and install a game safely without unexpected credit card charges:</p>
+
+          <div class="purchasing-roadmap">
+            <!-- Step 1 -->
+            <div class="roadmap-step-item">
+              <div class="roadmap-step-header">
+                <div class="roadmap-step-title-wrap">
+                  <div class="roadmap-step-num">1</div>
+                  <h4 class="roadmap-step-heading" data-i18n="m7Step1H">1. Check System Requirements (Will It Run?)</h4>
+                </div>
+                <span class="roadmap-step-tag" data-i18n="m7Step1Tag">PC & LAPTOPS ONLY</span>
+              </div>
+              <p data-i18n="m7Step1Lead">Unlike home consoles (Switch, PS5, Xbox) where every game is guaranteed to run, personal computers have different horsepower. Checking before buying prevents disappointment:</p>
+
+              <div class="roadmap-cards-subgrid">
+                <div class="roadmap-subcard">
+                  <h5>⚡ <span data-i18n="m7Step1MinH">Minimum Specifications</span></h5>
+                  <p data-i18n="m7Step1MinP">The baseline power needed to start the game. Think of it like an economy car that can get you up the hill at 35 mph.</p>
+                </div>
+                <div class="roadmap-subcard recommended">
+                  <h5>🚀 <span data-i18n="m7Step1RecH">Recommended Specifications</span></h5>
+                  <p data-i18n="m7Step1RecP">The ideal computer power for smooth animations and beautiful colors, like cruising in luxury with air conditioning.</p>
+                </div>
+              </div>
+
+              <div class="parent-alert-box info">
+                <span class="parent-alert-icon">💡</span>
+                <div class="parent-alert-content">
+                  <p data-i18n="m7Step1Tip">💡 <strong>Parent Pro-Tip:</strong> Consoles like Nintendo Switch or PlayStation never require hardware checks—if the box says Nintendo Switch, it will 100% work!</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="roadmap-step-item">
+              <div class="roadmap-step-header">
+                <div class="roadmap-step-title-wrap">
+                  <div class="roadmap-step-num">2</div>
+                  <h4 class="roadmap-step-heading" data-i18n="m7Step2H">2. Choose How to Buy (The 3 Purchasing Methods)</h4>
+                </div>
+                <span class="roadmap-step-tag" data-i18n="m7Step2Tag">SELECT BEST METHOD</span>
+              </div>
+              <p data-i18n="m7Step2Lead">Depending on your comfort level with computers, pick the method that feels safest and most convenient for your family:</p>
+
+              <div class="roadmap-cards-subgrid">
+                <div class="roadmap-subcard recommended">
+                  <h5>🎁 <span data-i18n="m7Step2M1H">Method A: Digital Gifting (Best for Grandparents!)</span></h5>
+                  <p data-i18n="m7Step2M1P">On Steam or Epic, add the game to your cart and choose <strong>'Purchase as a Gift'</strong>. Select your grandchild's username or email, choose a delivery date, and add a loving message. Your credit card is never stored on their computer!</p>
+                </div>
+
+                <div class="roadmap-subcard">
+                  <h5>💳 <span data-i18n="m7Step2M2H">Method B: Official Gift Cards (Zero Card Risk)</span></h5>
+                  <p data-i18n="m7Step2M2P">Buy a physical $20, $50, or $100 gift card at your supermarket, Target, or Amazon. Hand your child the card—they type the 15-character code to add wallet funds. <strong>No real credit card is ever exposed to the console or PC!</strong></p>
+                </div>
+
+                <div class="roadmap-subcard">
+                  <h5>🛒 <span data-i18n="m7Step2M3H">Method C: Direct Purchase on Device</span></h5>
+                  <p data-i18n="m7Step2M3P">Sit with your child at their computer or console, add the game to cart, and check out using credit card or PayPal. <strong>Crucial Step:</strong> Always UNCHECK 'Save payment info for future purchases' so no future one-click orders can happen without your permission.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="roadmap-step-item">
+              <div class="roadmap-step-header">
+                <div class="roadmap-step-title-wrap">
+                  <div class="roadmap-step-num">3</div>
+                  <h4 class="roadmap-step-heading" data-i18n="m7Step3H">3. Spot the Right Edition (Don't Overpay!)</h4>
+                </div>
+                <span class="roadmap-step-tag" data-i18n="m7Step3Tag">MONEY SAVER</span>
+              </div>
+              <p data-i18n="m7Step3Lead">Stores often show multiple editions of the same game. Knowing the difference saves you $20 to $50 per purchase:</p>
+
+              <div class="roadmap-cards-subgrid">
+                <div class="roadmap-subcard recommended">
+                  <h5>✅ <span data-i18n="m7Step3StdH">Standard Edition ($15 - $70)</span></h5>
+                  <p data-i18n="m7Step3StdP">The complete, 100% full game with the entire story, all characters, and every level. <strong>This is all 95% of players ever need!</strong></p>
+                </div>
+
+                <div class="roadmap-subcard">
+                  <h5>💎 <span data-i18n="m7Step3DlxH">Deluxe / Ultimate Edition ($80 - $130)</span></h5>
+                  <p data-i18n="m7Step3DlxP">The exact same game, bundled with digital soundtrack files, costume colors (skins), or artbooks. Do not buy this unless your child specifically requested the extra digital collectibles.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="roadmap-step-item">
+              <div class="roadmap-step-header">
+                <div class="roadmap-step-title-wrap">
+                  <div class="roadmap-step-num">4</div>
+                  <h4 class="roadmap-step-heading" data-i18n="m7Step4H">4. Safe Checkout & Payment Protection</h4>
+                </div>
+                <span class="roadmap-step-tag" data-i18n="m7Step4Tag">SECURITY FIRST</span>
+              </div>
+              <p data-i18n="m7Step4Lead">Follow these simple security habits to guarantee your finances remain completely safe:</p>
+
+              <div class="parent-alert-box safe" style="margin-bottom: 12px;">
+                <span class="parent-alert-icon">🔐</span>
+                <div class="parent-alert-content">
+                  <p data-i18n="m7Step4Rule1">🔐 <strong>Turn on 2-Factor Authentication (2FA):</strong> The store will send a quick 6-digit text code to your phone before any payment completes.</p>
+                </div>
+              </div>
+
+              <div class="parent-alert-box golden" style="margin-bottom: 12px;">
+                <span class="parent-alert-icon">🚫</span>
+                <div class="parent-alert-content">
+                  <p data-i18n="m7Step4Rule2">🚫 <strong>Never Save Credit Card Details:</strong> Look for the checkbox 'Remember this payment method' and leave it unchecked.</p>
+                </div>
+              </div>
+
+              <div class="parent-alert-box info">
+                <span class="parent-alert-icon">👨‍👩‍👧</span>
+                <div class="parent-alert-content">
+                  <p data-i18n="m7Step4Rule3">👨‍👩‍👧 <strong>Set Up a Store PIN / Parental Code:</strong> Both Steam and home consoles let parents set a 4-digit PIN required to approve any purchase.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="roadmap-step-item">
+              <div class="roadmap-step-header">
+                <div class="roadmap-step-title-wrap">
+                  <div class="roadmap-step-num">5</div>
+                  <h4 class="roadmap-step-heading" data-i18n="m7Step5H">5. Download, Installation & First Launch</h4>
+                </div>
+                <span class="roadmap-step-tag" data-i18n="m7Step5Tag">READY TO PLAY</span>
+              </div>
+              <p data-i18n="m7Step5Lead">What happens after the payment is approved? Here is the exact journey from screen to playing:</p>
+
+              <div class="roadmap-cards-subgrid">
+                <div class="roadmap-subcard">
+                  <h5>✉️ Email Invoice</h5>
+                  <p data-i18n="m7Step5P1">1. <strong>Email Receipt:</strong> You immediately receive an official email invoice with your order number and timestamp.</p>
+                </div>
+
+                <div class="roadmap-subcard">
+                  <h5>📚 Go to Library</h5>
+                  <p data-i18n="m7Step5P2">2. <strong>Go to 'Library':</strong> In the Steam or Epic desktop app, click the 'Library' tab at the top. The new game is now listed on their digital shelf.</p>
+                </div>
+
+                <div class="roadmap-subcard">
+                  <h5>📥 Click Install</h5>
+                  <p data-i18n="m7Step5P3">3. <strong>Click 'Install':</strong> Click the large blue button. Choose your hard drive, click 'Next', and watch the download progress bar fill up.</p>
+                </div>
+
+                <div class="roadmap-subcard recommended">
+                  <h5>🎮 Press PLAY!</h5>
+                  <p data-i18n="m7Step5P4">4. <strong>Click 'PLAY':</strong> Once the download reaches 100%, the button turns green and says 'PLAY'. Click it, grab your controller, and enjoy!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. The 2-Hour Safety Net (Refund Policy Guide) -->
+        <div class="clean-white-card" style="margin-top: 28px; border-left: 6px solid #22c55e;">
+          <div class="card-telemetry-header">
+            <span class="telemetry-node" style="color:#166534;">CONSUMER_PROTECTION // REFUND_GUARANTEE</span>
+            <span class="telemetry-code">SAFETY NET: 2 HOURS / 14 DAYS</span>
+            <span class="telemetry-badge" style="color:#166534;">100% REFUND</span>
+          </div>
+
+          <h3 class="card-title-lg" style="color: #166534;">
+            <span data-i18n="m7RefundTitle">🛡️ The '2-Hour Safety Net': How Game Refunds Work</span>
+            <span class="tag-code" style="background:#dcfce7; color:#166534;">// ZERO FINANCIAL RISK</span>
+          </h3>
+          <p data-i18n="m7RefundLead">One of the greatest fears for parents is: <em>'What if I buy the game and it doesn't run on our computer, or my grandchild doesn't like it?'</em> The digital stores have you covered with generous consumer protections:</p>
+
+          <div class="roadmap-cards-subgrid" style="margin-top: 18px;">
+            <div class="roadmap-subcard" style="border: 2px solid #86efac; background: #f0fdf4;">
+              <h5 style="color: #166534;">⏱️ <span data-i18n="m7RefundRule1H">Less than 2 Hours of Playtime</span></h5>
+              <p data-i18n="m7RefundRule1P">The timer only counts while the game is actively running on screen. If your child plays for 45 minutes and realizes it makes them dizzy or runs slow, you qualify for 100% money back.</p>
+            </div>
+
+            <div class="roadmap-subcard" style="border: 2px solid #86efac; background: #f0fdf4;">
+              <h5 style="color: #166534;">📅 <span data-i18n="m7RefundRule2H">Within 14 Days of Purchase</span></h5>
+              <p data-i18n="m7RefundRule2P">You have a full two weeks from the purchase date to test the game and request a refund.</p>
+            </div>
+          </div>
+
+          <div class="parent-alert-box safe" style="margin-top: 20px;">
+            <span class="parent-alert-icon">⚡</span>
+            <div class="parent-alert-content">
+              <h5 data-i18n="m7RefundHowH">How to Request a Refund on Steam (In 4 Clicks):</h5>
+              <p data-i18n="m7RefundHowP">1. Go to <strong>help.steampowered.com</strong><br>2. Log in and click <strong>'A Purchase'</strong><br>3. Click the game title and choose <strong>'I would like a refund'</strong><br>4. Select your refund method (Credit card or Steam wallet). Approved usually within a few hours!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Difficult Terms Tech Glossary Terminal -->
+        <div class="difficult-terms-terminal">
+          <div class="card-telemetry-header">
+            <span class="telemetry-node">TERMINOLOGY_DECODER // PARENT_DICTIONARY</span>
+            <span class="telemetry-code">10 TECHNICAL TERMS SIMPLIFIED</span>
+            <span class="telemetry-badge">INTERACTIVE</span>
+          </div>
+
+          <h3 class="card-title-lg">
+            <span data-i18n="m7TermsTitle">📖 Difficult Tech Terms Decoded for Parents & Seniors</span>
+            <span class="tag-code">// GLOSSARY</span>
+          </h3>
+          <p data-i18n="m7TermsLead">Click any word below to see its everyday plain-English definition, real-world analogy, and parent safety tip:</p>
+
+          <!-- Term Buttons Grid -->
+          <div class="difficult-terms-buttons" role="tablist" aria-label="Difficult Terms">
+            <button class="buying-term-btn active" data-term="launcher" onclick="window.app.showBuyingTerm('launcher')">🏪 Launcher / Store App</button>
+            <button class="buying-term-btn" data-term="library" onclick="window.app.showBuyingTerm('library')">📚 Digital Library</button>
+            <button class="buying-term-btn" data-term="specs" onclick="window.app.showBuyingTerm('specs')">⚡ System Specs (GPU/RAM)</button>
+            <button class="buying-term-btn" data-term="cloud" onclick="window.app.showBuyingTerm('cloud')">☁️ Cloud Saves</button>
+            <button class="buying-term-btn" data-term="dlc" onclick="window.app.showBuyingTerm('dlc')">🎁 DLC & Expansion Passes</button>
+            <button class="buying-term-btn" data-term="mrx" onclick="window.app.showBuyingTerm('mrx')">💎 Microtransactions</button>
+            <button class="buying-term-btn" data-term="drm" onclick="window.app.showBuyingTerm('drm')">🔒 DRM (Copy Protection)</button>
+            <button class="buying-term-btn" data-term="key" onclick="window.app.showBuyingTerm('key')">🔑 Product Key / Redeem Code</button>
+            <button class="buying-term-btn" data-term="early" onclick="window.app.showBuyingTerm('early')">🚧 Early Access</button>
+            <button class="buying-term-btn" data-term="parental" onclick="window.app.showBuyingTerm('parental')">🛡️ Parental Controls & PIN</button>
+          </div>
+
+          <!-- Active Term Card -->
+          <div class="buying-term-result-card" id="buying-term-result-card">
+            <div class="buying-term-head">
+              <h4 class="buying-term-title" id="buying-term-title">🏪 Store Client / Launcher</h4>
+              <span class="buying-term-badge" id="buying-term-badge">DESKTOP APPLICATION</span>
+            </div>
+
+            <p class="buying-term-desc" id="buying-term-desc">
+              A dedicated software application (such as the Steam program or Epic Games Launcher) installed on your computer. It serves as your personal storefront, download manager, and game launcher.
+            </p>
+
+            <div class="buying-term-analogy" id="buying-term-analogy">
+              <strong>💡 Everyday Analogy:</strong> <span id="buying-term-analogy-text">Like having the <strong>Kindle app</strong> or <strong>Netflix app</strong> on your tablet: one single organized hub where you browse, store, and open all your titles.</span>
+            </div>
+
+            <div class="buying-term-tip" id="buying-term-tip">
+              <span id="buying-term-tip-text">🛡️ <strong>Parent Safety Rule:</strong> Only download launchers from their official websites (<em>steampowered.com</em> or <em>store.epicgames.com</em>). Never download games from random third-party web search results.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. The 5 Golden Safety & Financial Rules -->
+        <div class="clean-white-card" style="margin-top: 28px;">
+          <div class="card-telemetry-header">
+            <span class="telemetry-node">SECURITY_CHECKLIST // GOLDEN_RULES</span>
+            <span class="telemetry-code">FINANCIAL PROTECTION</span>
+            <span class="telemetry-badge">5 PILLARS</span>
+          </div>
+
+          <h3 class="card-title-lg">
+            <span data-i18n="m7ChecklistTitle">⭐ The 5 Golden Safety & Financial Rules for Parents</span>
+            <span class="tag-code">// CHECKLIST</span>
+          </h3>
+          <p data-i18n="m7ChecklistLead">Print or remember this simple 5-point checklist before buying any video game for your children or grandchildren:</p>
+
+          <div class="parent-checklist-grid">
+            <div class="parent-checklist-card">
+              <div class="checklist-icon">1</div>
+              <div class="checklist-content">
+                <h5 data-i18n="m7Check1H">1. Check the Age Rating (ESRB / PEGI)</h5>
+                <p data-i18n="m7Check1P">Always look at the age badge: 'E' for Everyone, 'T' for Teen (13+), or 'M' for Mature (17+). Stores display content warnings for mild cartoon violence, language, or scary themes.</p>
+              </div>
+            </div>
+
+            <div class="parent-checklist-card">
+              <div class="checklist-icon">2</div>
+              <div class="checklist-content">
+                <h5 data-i18n="m7Check2H">2. Uncheck 'Save My Card Details'</h5>
+                <p data-i18n="m7Check2P">Never allow the store to save your payment details for one-click checkout. Typing your card each time or requiring a PIN stops accidental charges.</p>
+              </div>
+            </div>
+
+            <div class="parent-checklist-card">
+              <div class="checklist-icon">3</div>
+              <div class="checklist-content">
+                <h5 data-i18n="m7Check3H">3. Use Gift Cards for Safe Fixed Budgets</h5>
+                <p data-i18n="m7Check3P">A $25 or $50 gift card teaches kids budgeting and guarantees you can never be overcharged by a single penny.</p>
+              </div>
+            </div>
+
+            <div class="parent-checklist-card">
+              <div class="checklist-icon">4</div>
+              <div class="checklist-content">
+                <h5 data-i18n="m7Check4H">4. Test the Game in the First 2 Hours</h5>
+                <p data-i18n="m7Check4P">Have your child install and play the game right away. If it stutters, crashes, or isn't what they expected, request a 100% refund immediately.</p>
+              </div>
+            </div>
+
+            <div class="parent-checklist-card">
+              <div class="checklist-icon">5</div>
+              <div class="checklist-content">
+                <h5 data-i18n="m7Check5H">5. Enable Family View & Parental Controls</h5>
+                <p data-i18n="m7Check5P">Lock the store, chat with strangers, and violent titles behind a parent 4-digit PIN on Steam, PlayStation, Nintendo Switch, and Xbox.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Interactive Practice Scenarios for Parents -->
+        <div class="clean-white-card" style="margin-top: 28px;">
+          <div class="card-telemetry-header">
+            <span class="telemetry-node">PRACTICE_SCENARIOS // CONFIDENCE_BUILDER</span>
+            <span class="telemetry-code">FAMILY DILEMMAS SOLVED</span>
+            <span class="telemetry-badge">+150 XP</span>
+          </div>
+
+          <h3 class="card-title-lg">
+            <span data-i18n="m7ScenariosTitle">🎯 Parent Practice Scenarios (Test Your Confidence!)</span>
+            <span class="tag-code">// INTERACTIVE PRACTICE</span>
+          </h3>
+          <p data-i18n="m7ScenariosLead">Click your answer for each scenario below to test what you've learned. Instant feedback and tips provided:</p>
+
+          <!-- Scenario 1 -->
+          <div class="scenario-box" id="scenario-card-1">
+            <h4 class="scenario-title" data-i18n="m7Scen1Q">1. Your 10-year-old grandson lives in another city and wants a $30 game on Steam for his birthday. What is the safest way to buy it for him?</h4>
+            <div class="scenario-options">
+              <button class="scenario-option-btn" onclick="window.app.answerBuyingScenario(1, 0, false, (window.SILVER_TRANSLATIONS[window.app.currentLang]||window.SILVER_TRANSLATIONS.en).m7Scen1FeedbackErr)">
+                <span>❌</span>
+                <span data-i18n="m7Scen1Opt0">Give him your credit card number over the phone so he can enter it himself.</span>
+              </button>
+              <button class="scenario-option-btn" onclick="window.app.answerBuyingScenario(1, 1, true, (window.SILVER_TRANSLATIONS[window.app.currentLang]||window.SILVER_TRANSLATIONS.en).m7Scen1FeedbackOk)">
+                <span>✅</span>
+                <span data-i18n="m7Scen1Opt1">Buy it on your own free Steam account as a 'Digital Gift' sent directly to his account, or send a digital Steam Gift Card.</span>
+              </button>
+            </div>
+            <div class="scenario-feedback" id="scenario-feedback-1"></div>
+          </div>
+
+          <!-- Scenario 2 -->
+          <div class="scenario-box" id="scenario-card-2" style="margin-top: 18px;">
+            <h4 class="scenario-title" data-i18n="m7Scen2Q">2. You bought a game for your daughter's PC. When she launched it, the game was laggy and stuttered. She only played for 35 minutes. Can you get a refund?</h4>
+            <div class="scenario-options">
+              <button class="scenario-option-btn" onclick="window.app.answerBuyingScenario(2, 0, true, (window.SILVER_TRANSLATIONS[window.app.currentLang]||window.SILVER_TRANSLATIONS.en).m7Scen2FeedbackOk)">
+                <span>✅</span>
+                <span data-i18n="m7Scen2Opt0">Yes! Steam offers 100% refunds if played for under 2 hours and requested within 14 days.</span>
+              </button>
+              <button class="scenario-option-btn" onclick="window.app.answerBuyingScenario(2, 1, false, (window.SILVER_TRANSLATIONS[window.app.currentLang]||window.SILVER_TRANSLATIONS.en).m7Scen2FeedbackErr)">
+                <span>❌</span>
+                <span data-i18n="m7Scen2Opt1">No, once a digital game is downloaded, the money is lost forever.</span>
+              </button>
+            </div>
+            <div class="scenario-feedback" id="scenario-feedback-2"></div>
+          </div>
+
+          <!-- Scenario 3 -->
+          <div class="scenario-box" id="scenario-card-3" style="margin-top: 18px;">
+            <h4 class="scenario-title" data-i18n="m7Scen3Q">3. In a free game, your child asks for $10 to buy virtual 'V-Bucks' or 'Gems' for a character outfit. What is this, and how should you handle it?</h4>
+            <div class="scenario-options">
+              <button class="scenario-option-btn" onclick="window.app.answerBuyingScenario(3, 0, true, (window.SILVER_TRANSLATIONS[window.app.currentLang]||window.SILVER_TRANSLATIONS.en).m7Scen3FeedbackOk)">
+                <span>✅</span>
+                <span data-i18n="m7Scen3Opt0">It is a Microtransaction. It is purely cosmetic and optional; you can set a PIN lock so no unauthorized purchases can happen.</span>
+              </button>
+              <button class="scenario-option-btn" onclick="window.app.answerBuyingScenario(3, 1, false, (window.SILVER_TRANSLATIONS[window.app.currentLang]||window.SILVER_TRANSLATIONS.en).m7Scen3FeedbackErr)">
+                <span>❌</span>
+                <span data-i18n="m7Scen3Opt1">It is a mandatory monthly maintenance fee required to keep playing the game.</span>
+              </button>
+            </div>
+            <div class="scenario-feedback" id="scenario-feedback-3"></div>
+          </div>
+        </div>
+
+        <!-- Navigation Footer -->
+        <div class="lesson-nav-footer" style="margin-top: 34px;">
+          <button class="btn-nav-action btn-nav-prev" onclick="window.app.goToStep(6)" data-i18n="btnBackM6">
+            ⬅️ Back to Module 6 (Slang & Diploma)
+          </button>
+          <button class="btn-nav-action btn-nav-next" onclick="window.app.goToStep(1)" data-i18n="btnBackToStart">
+            🔄 Review Academy from Step 1
+          </button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p><strong data-i18n="footerTagline">Vintage Arena — Gaming Made Simple & Joyful for Everyone.</strong></p>
+      <p style="margin-top: 8px; font-size: 0.95rem; color: var(--text-muted);" data-i18n="footerQuote">"We don't stop playing because we grow old; we grow old because we stop playing."</p>
+    </footer>
+
+      </div> <!-- /dashboard-main-area -->
+    </div> <!-- /dashboard-layout-wrapper -->
+  </div> <!-- /main-app-hub -->
+
+  <!-- ==========================================================
+       3. FULL-SCREEN GAME CODEX DEEP-DIVE SCREEN / MODAL
+       ========================================================== -->
+  <div id="game-codex-modal" class="game-codex-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="codex-modal-title">
+    <div class="game-codex-modal-card">
+      <!-- Top Navigation & Controls Bar -->
+      <div class="codex-modal-top-bar" id="codex-modal-top-bar">
+        <button class="codex-back-top-btn" onclick="window.app.closeGameCodex()" title="Return to Game Vault list" data-i18n="codexBackBtn">
+          ⬅️ Back to Game Vault
+        </button>
+        
+        <div class="codex-nav-stepper">
+          <button class="codex-nav-step-btn" onclick="window.app.navigateGameCodex(-1)" title="Inspect Previous Game" data-i18n="codexPrev">
+            ◀ Previous
+          </button>
+          <span class="codex-game-counter" id="codex-game-counter">Game 1 of 36</span>
+          <button class="codex-nav-step-btn" onclick="window.app.navigateGameCodex(1)" title="Inspect Next Game" data-i18n="codexNext">
+            Next ▶
+          </button>
+        </div>
+
+        <button class="codex-close-btn" onclick="window.app.closeGameCodex()" title="Close Game Codex">&times;</button>
+      </div>
+
+      <!-- Hero Header Banner -->
+      <div class="game-codex-hero-header" id="codex-modal-hero">
+        <div class="codex-hero-title-group">
+          <div class="codex-hero-logo-wrap" id="codex-modal-logo-wrap">
+            <!-- Injected dynamically with custom SVG logo -->
+          </div>
+          <div class="codex-hero-text-wrap">
+            <div class="codex-hero-badges-row">
+              <span class="codex-hero-genre-tag" id="codex-modal-genre">GENRE CATEGORY</span>
+              <span class="codex-hero-age-tag" id="codex-modal-age">ESRB RATING</span>
+            </div>
+            <h2 class="codex-hero-title" id="codex-modal-title">Game Title</h2>
+            <div class="codex-hero-subline" id="codex-modal-subline">
+              <span id="codex-modal-studio">Studio</span> • <span id="codex-modal-year">Year</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Deep Dive Content Body -->
+      <div class="codex-modal-body" id="codex-modal-body-content">
+        <!-- Filled dynamically by window.app.openGameCodex(gameId) -->
+      </div>
+
+      <!-- Bottom Navigation Footer -->
+      <div class="codex-modal-footer">
+        <button class="read-aloud-big-btn" id="codex-tts-btn" onclick="window.app.readGameCodex()" data-i18n="codexReadAloud">
+          🔊 Read this Full Game Guide Aloud
+        </button>
+        <div class="codex-footer-buttons-group">
+          <button class="btn-nav-action" onclick="window.app.openParentGuideFromCodex()" style="background: #e0f2fe; color: #0369a1; border: 1.5px solid #7dd3fc;">
+            🛒 How to Buy & Gift This Game
+          </button>
+          <button class="btn-nav-action btn-nav-prev" onclick="window.app.navigateGameCodex(-1)" data-i18n="codexPrev">
+            ◀ Previous Game
+          </button>
+          <button class="btn-nav-action btn-nav-next" onclick="window.app.navigateGameCodex(1)" data-i18n="codexNext">
+            Next Game ▶
+          </button>
+          <button class="btn-nav-action btn-nav-prev" onclick="window.app.closeGameCodex()" data-i18n="codexBackVault">
+            ⬅️ Back to Vault
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================
+       4. FLOATING BOTTOM-RIGHT FEEDBACK SYSTEM
+       ========================================================== -->
+  <button id="feedback-floating-btn" class="feedback-floating-btn" onclick="window.app.openFeedbackModal()" title="Leave feedback or share your thoughts" data-i18n="feedbackFloatBtn">
+    💬 <span>Feedback & Thoughts</span>
+  </button>
+
+  <!-- Feedback Modal Dialog -->
+  <div id="feedback-modal" class="feedback-modal-overlay">
+    <div class="feedback-modal-card">
+      <div class="feedback-modal-header">
+        <h3 data-i18n="feedbackHeader">💬 Share Your Thoughts</h3>
+        <button class="feedback-close-btn" onclick="window.app.closeFeedbackModal()" title="Close">&times;</button>
+      </div>
+
+      <form id="feedback-form" onsubmit="window.app.submitFeedback(event)">
+        <!-- Star Rating -->
+        <div class="feedback-form-group">
+          <label data-i18n="feedbackExpLabel">How is your learning experience?</label>
+          <div class="feedback-rating-stars">
+            <span class="feedback-star active" data-rating="1" onclick="window.app.setRating(1)">★</span>
+            <span class="feedback-star active" data-rating="2" onclick="window.app.setRating(2)">★</span>
+            <span class="feedback-star active" data-rating="3" onclick="window.app.setRating(3)">★</span>
+            <span class="feedback-star active" data-rating="4" onclick="window.app.setRating(4)">★</span>
+            <span class="feedback-star active" data-rating="5" onclick="window.app.setRating(5)">★</span>
+          </div>
+        </div>
+
+        <!-- Category -->
+        <div class="feedback-form-group">
+          <label for="feedback-category" data-i18n="feedbackTopicLabel">Topic of Feedback:</label>
+          <select id="feedback-category" class="feedback-select">
+            <option value="general" data-i18n="feedbackOptGeneral">🌟 General Learning Experience</option>
+            <option value="game" data-i18n="feedbackOptGame">🎮 Suggest a Game for the Vault</option>
+            <option value="slang" data-i18n="feedbackOptSlang">💬 Suggest a Gaming Word to Explain</option>
+            <option value="question" data-i18n="feedbackOptQuestion">❓ Question or Confusion</option>
+            <option value="compliment" data-i18n="feedbackOptPraise">💖 Praise & Encouragement</option>
+          </select>
+        </div>
+
+        <!-- Name (Optional) -->
+        <div class="feedback-form-group">
+          <label for="feedback-name" data-i18n="feedbackNameLabel">Your Name (Optional):</label>
+          <input type="text" id="feedback-name" class="feedback-input" placeholder="e.g. Grandma Helen" data-i18n-placeholder="feedbackNamePlaceholder">
+        </div>
+
+        <!-- Message -->
+        <div class="feedback-form-group">
+          <label for="feedback-msg" data-i18n="feedbackMsgLabel">Your Message or Opinion:</label>
+          <textarea id="feedback-msg" class="feedback-textarea" rows="4" placeholder="Tell us what you liked or what else you would like to learn..." data-i18n-placeholder="feedbackMsgPlaceholder" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-nav-action btn-nav-next" style="width: 100%; justify-content: center;" data-i18n="feedbackSubmitBtn">
+          📨 Send Feedback
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Confirmation Toast -->
+  <div id="feedback-toast" class="feedback-toast" data-i18n="feedbackToastText">
+    ✨ Thank you for your feedback! Your thoughts help us make gaming accessible to all seniors.
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/games-data.js"></script>
+  <script src="js/translations.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/tts.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
